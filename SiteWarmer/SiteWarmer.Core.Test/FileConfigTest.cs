@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace SiteWarmer.Core.Test
 {
@@ -18,10 +17,9 @@ namespace SiteWarmer.Core.Test
 		public void Checks()
 		{
 			var checks = _config.Checks;
-			Assert.AreEqual(3, checks.Count);
+			Assert.AreEqual(2, checks.Count);
 			Assert.AreEqual("http://www.simonbaynes.com/", checks[0].Url);
 			Assert.AreEqual("http://www.simonbaynes.com/blog/", checks[1].Url);
-			Assert.AreEqual("http://www.simonbaynes.com/contact/", checks[2].Url);
 		}
 	}
 }

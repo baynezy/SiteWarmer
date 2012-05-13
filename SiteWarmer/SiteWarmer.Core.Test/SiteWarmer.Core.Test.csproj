@@ -46,6 +46,7 @@
     <Compile Include="FileConfigTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequesterTest.cs" />
+    <Compile Include="WarmerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SiteWarmer.Core\SiteWarmer.Core.csproj">
