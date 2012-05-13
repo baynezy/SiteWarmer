@@ -20,6 +20,8 @@ namespace SiteWarmer.Core.Test
 			var checks = _config.Checks;
 			Assert.AreEqual(3, checks.Count);
 			Assert.AreEqual("http://www.simonbaynes.com/", checks[0].Url);
+			Assert.AreEqual("http://www.simonbaynes.com/blog/", checks[1].Url);
+			Assert.AreEqual("http://www.simonbaynes.com/contact/", checks[2].Url);
 		}
 	}
 }
