@@ -1,0 +1,26 @@
+h1. SiteWarmer
+
+Allows you to hit your sites after a deployment to make sure they are running.
+
+h2. Usage
+
+h3. Config file
+
+You need to specify the URLs you want to use in a text file. They need to be one per line to work
+e.g.
+
+```
+http://www.google.com/
+http://www.github.com/
+```
+
+h3. As a Console Application
+
+You need to build both SiteWarmer.Core and SiteWarmer.App, the .exe and the .dll created by these can either be placed in the same directory or you can install the dll in the GAC (Global Assembly Cache).
+
+Once that has been set up then you just need to run the .exe from the command line with one parameter that is the relative or absolute path to the configuration file.
+e.g.
+
+```
+\> SiteWarmer.App.exe Config.txt
+```
