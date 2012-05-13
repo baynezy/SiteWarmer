@@ -26,12 +26,14 @@ namespace SiteWarmer.Core
 
 		private void ParseFile(string fullPath)
 		{
-			var file = new StreamReader(fullPath);
-			string line;
-
-			while ((line = file.ReadLine()) != null)
+			using(var file = new StreamReader(fullPath))
 			{
-				AddCheck(line);
+				string line;
+
+				while ((line = file.ReadLine()) != null)
+				{
+					AddCheck(line);
+				}
 			}
 		}
 
