@@ -9,10 +9,8 @@ h3. Config file
 You need to specify the URLs you want to use in a text file. They need to be one per line to work
 e.g.
 
-```
-http://www.google.com/
-http://www.github.com/
-```
+```http://www.google.com/
+http://www.github.com/```
 
 h3. As a Console Application
 
@@ -21,6 +19,4 @@ You need to build both SiteWarmer.Core and SiteWarmer.App, the .exe and the .dll
 Once that has been set up then you just need to run the .exe from the command line with one parameter that is the relative or absolute path to the configuration file.
 e.g.
 
-```
-\> SiteWarmer.App.exe Config.txt
-```
+```\> SiteWarmer.App.exe Config.txt```
