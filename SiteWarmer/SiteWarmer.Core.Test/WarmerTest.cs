@@ -12,7 +12,8 @@ namespace SiteWarmer.Core.Test
 		{
 			var config = new FileConfig(@"..\..\Data\urls.txt");
 			var requester = new Requester();
-			_warmer = new Warmer(config, requester);
+			var logger = new ConsoleLogger();
+			_warmer = new Warmer(config, requester, logger);
 		}
 
 		[Test]

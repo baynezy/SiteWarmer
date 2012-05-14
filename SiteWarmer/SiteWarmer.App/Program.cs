@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using SiteWarmer.Core;
 
 namespace SiteWarmer.App
@@ -16,19 +15,10 @@ namespace SiteWarmer.App
 
 			var config = new FileConfig(args[0]);
 			var requester = new Requester();
-			var warmer = new Warmer(config, requester);
+			var logger = new ConsoleLogger();
+			var warmer = new Warmer(config, requester, logger);
 
-			var checks = warmer.Warm();
-
-			Log(checks);
-		}
-
-		private static void Log(IEnumerable<Check> checks)
-		{
-			foreach (var check in checks)
-			{
-				Console.WriteLine(String.Format("{0}: {1}", check.Status, check.Url));
-			}
+			warmer.Warm();
 		}
 	}
 }
