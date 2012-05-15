@@ -1,3 +1,5 @@
 ﻿http://www.simonbaynes.com/
 http://www.simonbaynes.com/blog/
 http://www.simonbaynes.com/_errors/error.cfm
+http://www.google.com/
+http://www.github.com/

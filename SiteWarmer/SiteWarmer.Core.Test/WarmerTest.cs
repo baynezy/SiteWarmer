@@ -21,10 +21,12 @@ namespace SiteWarmer.Core.Test
 		{
 			var checks = _warmer.Warm();
 
-			Assert.AreEqual(3, checks.Count);
+			Assert.AreEqual(5, checks.Count);
 			Assert.AreEqual(200, checks[0].Status);
 			Assert.AreEqual(200, checks[1].Status);
 			Assert.AreEqual(500, checks[2].Status);
+			Assert.AreEqual(200, checks[3].Status);
+			Assert.AreEqual(200, checks[4].Status);
 		}
 	}
 }
