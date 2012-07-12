@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SiteWarmer.Core
 {
@@ -19,11 +20,11 @@ namespace SiteWarmer.Core
 		{
 			var checks = _config.Checks;
 
-			foreach (var check in checks)
-			{
-				_requester.Check(check);
-				_logger.Log(check);
-			}
+		    Parallel.ForEach(checks, check =>
+		                                 {
+		                                     _requester.Check(check);
+		                                     _logger.Log(check);
+		                                 });
 
 			return checks;
 		}
