@@ -17,12 +17,11 @@ namespace SiteWarmer.Core.Test
 		public void Checks()
 		{
 			var checks = _config.Checks;
-			Assert.AreEqual(5, checks.Count);
-			Assert.AreEqual("http://www.simonbaynes.com/", checks[0].Url);
-			Assert.AreEqual("http://www.simonbaynes.com/blog/", checks[1].Url);
-			Assert.AreEqual("http://www.simonbaynes.com/_errors/error.cfm", checks[2].Url);
-			Assert.AreEqual("http://www.google.com/", checks[3].Url);
-			Assert.AreEqual("http://www.github.com/", checks[4].Url);
+			Assert.AreEqual(4, checks.Count);
+			Assert.AreEqual("http://www.simonbaynes.com/_errors/error.cfm", checks[0].Url);
+			Assert.AreEqual("http://www.google.com/", checks[1].Url);
+			Assert.AreEqual("http://www.github.com/", checks[2].Url);
+			Assert.AreEqual("http://www.simonbaynes.com/404/", checks[3].Url);
 		}
 	}
 }

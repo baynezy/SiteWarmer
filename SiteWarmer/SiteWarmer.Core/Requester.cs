@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 
 namespace SiteWarmer.Core
 {
@@ -21,7 +20,8 @@ namespace SiteWarmer.Core
 			}
 			catch (WebException e)
 			{
-				return 500;
+				var webResponse = ((HttpWebResponse) e.Response);
+				return (webResponse == null) ? 500 : (int)webResponse.StatusCode;
 			}
 		}
 	}

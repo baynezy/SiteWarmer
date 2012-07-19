@@ -14,13 +14,33 @@ namespace SiteWarmer.Core.Test
 		}
 
 		[Test]
-		public void TestUrl()
+		public void Test200()
 		{
-			var check = new Check {Url = "http://www.simonbaynes.com/"};
+			var check = new Check { Url = "http://www.simonbaynes.com/home/" };
 
 			_requester.Check(check);
 
 			Assert.AreEqual(200, check.Status);
+		}
+
+		[Test]
+		public void Test500()
+		{
+			var check = new Check { Url = "http://www.simonbaynes.com/_errors/error.cfm" };
+
+			_requester.Check(check);
+
+			Assert.AreEqual(500, check.Status);
+		}
+
+		[Test]
+		public void Test404()
+		{
+			var check = new Check { Url = "http://www.simonbaynes.com/404/" };
+
+			_requester.Check(check);
+
+			Assert.AreEqual(404, check.Status);
 		}
 	}
 }
