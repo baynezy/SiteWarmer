@@ -57,7 +57,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)..\..\lib\ILMerge.exe /ndebug /targetplatform:v4 /target:exe /out:$(TargetDir)\output\SiteWarmer.exe $(TargetDir)SiteWarmer.App.exe $(TargetDir)SiteWarmer.Core.dll</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)..\..\lib\ILMerge.exe /allowDup /wildcards /ndebug /targetplatform:v4 /target:exe /out:$(TargetDir)\output\SiteWarmer.exe $(TargetDir)*.exe $(TargetDir)*.dll</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>rmdir $(TargetDir)\output
