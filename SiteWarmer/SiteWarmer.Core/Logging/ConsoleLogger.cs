@@ -1,6 +1,7 @@
 ﻿using System;
+using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.Core
+namespace SiteWarmer.Core.Logging
 {
 	public class ConsoleLogger : ILogger
 	{

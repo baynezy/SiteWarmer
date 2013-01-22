@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FileConfigTest.cs" />
-    <Compile Include="FileLoggerTest.cs" />
-    <Compile Include="LoggerCollectionTest.cs" />
+    <Compile Include="Config\FileConfigTest.cs" />
+    <Compile Include="Logging\FileLoggerTest.cs" />
+    <Compile Include="Logging\LoggerCollectionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequesterTest.cs" />
+    <Compile Include="Comms\RequesterTest.cs" />
     <Compile Include="WarmerTest.cs" />
   </ItemGroup>
   <ItemGroup>

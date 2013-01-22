@@ -1,4 +1,6 @@
-﻿namespace SiteWarmer.Core
+﻿using SiteWarmer.Core.Config;
+
+namespace SiteWarmer.Core.Comms
 {
 	public interface IRequester
 	{

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace SiteWarmer.Core
+namespace SiteWarmer.Core.Config
 {
 	public class FileConfig : IConfig
 	{

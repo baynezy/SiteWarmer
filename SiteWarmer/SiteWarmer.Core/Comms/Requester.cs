@@ -1,6 +1,7 @@
 ﻿using System.Net;
+using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.Core
+namespace SiteWarmer.Core.Comms
 {
 	public class Requester : IRequester
 	{

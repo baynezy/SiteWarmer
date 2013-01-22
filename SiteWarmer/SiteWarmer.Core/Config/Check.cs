@@ -1,4 +1,4 @@
-﻿namespace SiteWarmer.Core
+﻿namespace SiteWarmer.Core.Config
 {
 	public class Check
 	{

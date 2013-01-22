@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SiteWarmer.Core
+namespace SiteWarmer.Core.Config
 {
 	public interface IConfig
 	{

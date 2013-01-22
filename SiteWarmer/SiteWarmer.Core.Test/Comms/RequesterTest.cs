@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
+using SiteWarmer.Core.Comms;
+using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.Core.Test
+namespace SiteWarmer.Core.Test.Comms
 {
 	[TestFixture]
 	class RequesterTest

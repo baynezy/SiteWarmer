@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using Moq;
 using NUnit.Framework;
+using SiteWarmer.Core.Comms;
+using SiteWarmer.Core.Config;
+using SiteWarmer.Core.Logging;
 
 namespace SiteWarmer.Core.Test
 {

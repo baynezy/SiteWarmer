@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.Core
+namespace SiteWarmer.Core.Logging
 {
 	public class LoggerCollection : ILogger
 	{

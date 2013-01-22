@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
+using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.Core.Test
+namespace SiteWarmer.Core.Test.Config
 {
 	[TestFixture]
 	class FileConfigTest

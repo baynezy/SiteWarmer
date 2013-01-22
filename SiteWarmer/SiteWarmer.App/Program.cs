@@ -1,6 +1,9 @@
 ﻿using System;
 using CommandLine;
 using SiteWarmer.Core;
+using SiteWarmer.Core.Comms;
+using SiteWarmer.Core.Config;
+using SiteWarmer.Core.Logging;
 
 namespace SiteWarmer.App
 {

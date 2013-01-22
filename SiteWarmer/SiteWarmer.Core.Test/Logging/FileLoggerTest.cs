@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
+using SiteWarmer.Core.Logging;
 
-namespace SiteWarmer.Core.Test
+namespace SiteWarmer.Core.Test.Logging
 {
 	[TestFixture]
 	class FileLoggerTest

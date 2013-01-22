@@ -1,7 +1,9 @@
 ﻿using Moq;
 using NUnit.Framework;
+using SiteWarmer.Core.Config;
+using SiteWarmer.Core.Logging;
 
-namespace SiteWarmer.Core.Test
+namespace SiteWarmer.Core.Test.Logging
 {
 	[TestFixture]
 	class LoggerCollectionTest
