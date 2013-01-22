@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using Moq;
+using NUnit.Framework;
 
 namespace SiteWarmer.Core.Test
 {
@@ -26,6 +28,31 @@ namespace SiteWarmer.Core.Test
 			Assert.AreEqual(200, checks[1].Status);
 			Assert.AreEqual(200, checks[2].Status);
 			Assert.AreEqual(404, checks[3].Status);
+		}
+
+		[Test]
+		public void WarmClosesLogger()
+		{
+			var mockLogger = new Mock<ILogger>();
+			mockLogger.Setup(m => m.Log(It.IsAny<Check>()));
+			mockLogger.Setup(m => m.Close());
+			var mockRequester = new Mock<IRequester>();
+			mockRequester.Setup(m => m.Check(It.IsAny<Check>()));
+			var mockConfig = new Mock<IConfig>();
+			mockConfig.SetupGet(m => m.Checks).Returns(new List<Check>
+			                                           	{
+			                                           		new Check
+			                                           			{
+			                                           				Status = 200,
+																	Url = "http://www.google.com"
+			                                           			}
+			                                           	});
+
+
+			var warmer = new Warmer(mockConfig.Object, mockRequester.Object, mockLogger.Object);
+			warmer.Warm();
+
+			mockLogger.Verify(f => f.Close(), Times.Once());
 		}
 	}
 }

@@ -3,5 +3,6 @@
 	public interface ILogger
 	{
 		void Log(Check check);
+		void Close();
 	}
 }

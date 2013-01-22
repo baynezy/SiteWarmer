@@ -6,10 +6,10 @@ namespace SiteWarmer.Core
 	public class Warmer
 	{
 		private readonly IConfig _config;
-		private readonly Requester _requester;
+		private readonly IRequester _requester;
 		private readonly ILogger _logger;
 
-		public Warmer(IConfig config, Requester requester, ILogger logger)
+		public Warmer(IConfig config, IRequester requester, ILogger logger)
 		{
 			_config = config;
 			_requester = requester;
@@ -25,6 +25,8 @@ namespace SiteWarmer.Core
 		                                     _requester.Check(check);
 		                                     _logger.Log(check);
 		                                 });
+
+			_logger.Close();
 
 			return checks;
 		}

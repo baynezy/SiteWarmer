@@ -28,5 +28,13 @@ namespace SiteWarmer.Core
 				logger.Log(check);
 			}
 		}
+
+		public void Close()
+		{
+			foreach (var logger in _loggers)
+			{
+				logger.Close();
+			}
+		}
 	}
 }

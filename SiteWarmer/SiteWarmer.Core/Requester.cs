@@ -2,7 +2,7 @@
 
 namespace SiteWarmer.Core
 {
-	public class Requester
+	public class Requester : IRequester
 	{
 		public void Check(Check check)
 		{

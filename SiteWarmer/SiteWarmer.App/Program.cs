@@ -1,4 +1,5 @@
-﻿using CommandLine;
+﻿using System;
+using CommandLine;
 using SiteWarmer.Core;
 
 namespace SiteWarmer.App
@@ -10,14 +11,32 @@ namespace SiteWarmer.App
 			var options = new Options();
 			var parser = new CommandLineParser();
 
-			parser.ParseArguments(args, options);
+			if (parser.ParseArguments(args, options, Console.Error))
+			{
+				var config = new FileConfig(options.Inputfile);
+				var requester = new Requester();
+				ILogger logger;
 
-			var config = new FileConfig(options.Inputfile);
-			var requester = new Requester();
-			var logger = new ConsoleLogger();
-			var warmer = new Warmer(config, requester, logger);
+				if (options.LogError)
+				{
+					var collection = new LoggerCollection();
+					collection.Add(new ConsoleLogger());
+					collection.Add(new FileLogger());
 
-			warmer.Warm();
+					logger = collection;
+				}
+				else
+				{
+					logger = new ConsoleLogger();
+				}
+				var warmer = new Warmer(config, requester, logger);
+
+				warmer.Warm();
+			}
+			else
+			{
+				Environment.Exit(1);
+			}
 		}
 	}
 }

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileConfigTest.cs" />
+    <Compile Include="FileLoggerTest.cs" />
     <Compile Include="LoggerCollectionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequesterTest.cs" />
