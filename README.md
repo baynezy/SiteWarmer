@@ -19,7 +19,7 @@ Once you build the solution there will be a bin\Release\output\SiteWarmer.exe fi
 To use the application you just need to run the .exe from the command line with one parameter that is the relative or absolute path to the configuration file.
 e.g.
 
-    \> SiteWarmer.exe Config.txt
+    \> SiteWarmer.exe -i Config.txt
 	
 ##Contributing
 
