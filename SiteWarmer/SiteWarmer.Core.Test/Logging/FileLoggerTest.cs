@@ -7,7 +7,7 @@ namespace SiteWarmer.Core.Test.Logging
 	class FileLoggerTest
 	{
 		[Test]
-		public void ImplementsILogger()
+		public void FileLogger_ImplementsILogger()
 		{
 			var logger = new FileLogger();
 

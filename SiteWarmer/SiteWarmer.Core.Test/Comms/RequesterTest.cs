@@ -7,7 +7,7 @@ namespace SiteWarmer.Core.Test.Comms
 	[TestFixture]
 	class RequesterTest
 	{
-		private Requester _requester;
+		private IRequester _requester;
 
 		[SetUp]
 		public void SetUp()
@@ -16,7 +16,7 @@ namespace SiteWarmer.Core.Test.Comms
 		}
 
 		[Test]
-		public void Test200()
+		public void Check_CallsExistingPage_Returns200StatusCode()
 		{
 			var check = new Check { Url = "http://www.simonbaynes.com/home/" };
 
@@ -26,7 +26,7 @@ namespace SiteWarmer.Core.Test.Comms
 		}
 
 		[Test]
-		public void Test500()
+        public void Check_CallsErroringPage_Returns500StatusCode()
 		{
 			var check = new Check { Url = "http://www.simonbaynes.com/_errors/error.cfm" };
 
@@ -36,7 +36,7 @@ namespace SiteWarmer.Core.Test.Comms
 		}
 
 		[Test]
-		public void Test404()
+        public void Check_CallsMissingPage_Returns404StatusCode()
 		{
 			var check = new Check { Url = "http://www.simonbaynes.com/404/" };
 

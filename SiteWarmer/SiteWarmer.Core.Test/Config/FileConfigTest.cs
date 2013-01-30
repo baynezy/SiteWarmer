@@ -15,14 +15,14 @@ namespace SiteWarmer.Core.Test.Config
 		}
 
 		[Test]
-		public void Checks()
+		public void Checks_ReadingInCorrectFile_ReturnsChecksCorrectly()
 		{
 			var checks = _config.Checks;
 			Assert.AreEqual(4, checks.Count);
-			Assert.AreEqual("http://www.simonbaynes.com/_errors/error.cfm", checks[0].Url);
+			Assert.AreEqual("http://www.yahoo.com/", checks[0].Url);
 			Assert.AreEqual("http://www.google.com/", checks[1].Url);
 			Assert.AreEqual("http://www.github.com/", checks[2].Url);
-			Assert.AreEqual("http://www.simonbaynes.com/404/", checks[3].Url);
+			Assert.AreEqual("http://www.bbc.co.uk/", checks[3].Url);
 		}
 	}
 }

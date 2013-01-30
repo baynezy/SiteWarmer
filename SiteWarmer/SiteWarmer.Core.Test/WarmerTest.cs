@@ -10,52 +10,46 @@ namespace SiteWarmer.Core.Test
 	[TestFixture]
 	class WarmerTest
 	{
-		private Warmer _warmer;
-
-		[SetUp]
-		public void Setup()
+	    [Test]
+		public void Warm_ReceivesPopulatedConfig_CallsCorrectMethods()
 		{
-			var config = new FileConfig(@"..\..\Data\urls.txt");
-			var requester = new Requester();
-			var logger = new ConsoleLogger();
-			_warmer = new Warmer(config, requester, logger);
-		}
+            var config = new Mock<IConfig>();
+            config.Setup(m => m.Checks).Returns(
+                    new List<Check>
+                        {
+                            new Check
+                                {
+                                    Url = "http://www.yahoo.com/"
+                                },
+                            new Check
+                                {
+                                    Url = "http://www.google.com/"
+                                },
+                            new Check
+                                {
+                                    Url = "http://www.github.com/"
+                                },
+                            new Check
+                                {
+                                    Url = "http://www.bbc.co.uk/"
+                                }
+                        }
+                );
+            var requester = new Mock<IRequester>();
+            requester.Setup(m => m.Check(It.IsAny<Check>()));
+            var logger = new Mock<ILogger>();
+            logger.Setup(m => m.Log(It.IsAny<Check>()));
+            var warmer = new Warmer(config.Object, requester.Object, logger.Object);
+            
+            warmer.Warm();
 
-		[Test]
-		public void Warm()
-		{
-			var checks = _warmer.Warm();
+            config.Verify(f => f.Checks, Times.Once());
 
-			Assert.AreEqual(4, checks.Count);
-			Assert.AreEqual(500, checks[0].Status);
-			Assert.AreEqual(200, checks[1].Status);
-			Assert.AreEqual(200, checks[2].Status);
-			Assert.AreEqual(404, checks[3].Status);
-		}
+            requester.Verify(f => f.Check(It.IsAny<Check>()), Times.Exactly(4));
 
-		[Test]
-		public void WarmClosesLogger()
-		{
-			var mockLogger = new Mock<ILogger>();
-			mockLogger.Setup(m => m.Log(It.IsAny<Check>()));
-			mockLogger.Setup(m => m.Close());
-			var mockRequester = new Mock<IRequester>();
-			mockRequester.Setup(m => m.Check(It.IsAny<Check>()));
-			var mockConfig = new Mock<IConfig>();
-			mockConfig.SetupGet(m => m.Checks).Returns(new List<Check>
-			                                           	{
-			                                           		new Check
-			                                           			{
-			                                           				Status = 200,
-																	Url = "http://www.google.com"
-			                                           			}
-			                                           	});
+            logger.Verify(f => f.Log(It.IsAny<Check>()), Times.Exactly(4));
 
-
-			var warmer = new Warmer(mockConfig.Object, mockRequester.Object, mockLogger.Object);
-			warmer.Warm();
-
-			mockLogger.Verify(f => f.Close(), Times.Once());
+            logger.Verify(f => f.Close(), Times.Once());
 		}
 	}
 }

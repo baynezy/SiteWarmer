@@ -9,7 +9,7 @@ namespace SiteWarmer.Core.Test.Logging
 	class LoggerCollectionTest
 	{
 		[Test]
-		public void Size()
+		public void Size_EmptyCollection_ReturnsZeroSize()
 		{
 			const int expectedSize = 0;
 			var collection = new LoggerCollection();
@@ -18,7 +18,7 @@ namespace SiteWarmer.Core.Test.Logging
 		}
 
 		[Test]
-		public void Add()
+		public void Add_AddingLoggerToCollection_ReturnsCorrectSize()
 		{
 			const int expectedSize = 1;
 			var collection = new LoggerCollection();
@@ -30,7 +30,7 @@ namespace SiteWarmer.Core.Test.Logging
 		}
 
 		[Test]
-		public void ImplementsILogger()
+		public void LoggerCollection_ImplementsILogger()
 		{
 			var collection = new LoggerCollection();
 
@@ -38,7 +38,7 @@ namespace SiteWarmer.Core.Test.Logging
 		}
 
 		[Test]
-		public void Log()
+		public void Log_CallingLog_CallsInternalLoggersLogMethodTheCorrectNumberOfTimes()
 		{
 			var collection = new LoggerCollection();
 			var logger1 = new Mock<ILogger>();

@@ -1,4 +1,4 @@
-﻿http://www.simonbaynes.com/_errors/error.cfm
+﻿http://www.yahoo.com/
 http://www.google.com/
 http://www.github.com/
-http://www.simonbaynes.com/404/
+http://www.bbc.co.uk/
