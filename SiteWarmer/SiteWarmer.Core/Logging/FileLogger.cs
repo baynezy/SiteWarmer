@@ -23,7 +23,9 @@ namespace SiteWarmer.Core.Logging
 
 		public void Close()
 		{
-			InitializeLogIfNeccessary();
+            if (!AnyCheckErrored()) return;
+            
+            InitializeLog();
 			using (var writer = File.AppendText(LogFile))
 			{
 				foreach (var check in _checks)
@@ -33,15 +35,19 @@ namespace SiteWarmer.Core.Logging
 			}
 		}
 
-		private static void InitializeLogIfNeccessary()
+		private static void InitializeLog()
 		{
-			if (!FileExists(LogFile))
-			{
-				CreateFile(LogFile);
-			}
+		    if (FileExists(LogFile)) return;
+
+			CreateFile(LogFile);
 		}
 
-		private static bool FileExists(string errorLog)
+	    private static bool AnyCheckErrored()
+	    {
+	        return _checks.Count != 0;
+	    }
+
+	    private static bool FileExists(string errorLog)
 		{
 			return File.Exists(Path.GetFullPath(errorLog));
 		}
