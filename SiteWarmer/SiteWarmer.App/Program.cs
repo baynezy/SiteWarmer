@@ -32,7 +32,17 @@ namespace SiteWarmer.App
 				{
 					logger = new ConsoleLogger();
 				}
-				var warmer = new Warmer(config, requester, logger);
+
+				Warmer warmer;
+
+				if (options.Retries > 1)
+				{
+					warmer = new RepeatWarmer(config, requester, logger, options.Retries);
+				}
+				else
+				{
+					warmer = new Warmer(config, requester, logger);
+				}
 
 				warmer.Warm();
 			}

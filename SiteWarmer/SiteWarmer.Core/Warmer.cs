@@ -19,19 +19,26 @@ namespace SiteWarmer.Core
 			_logger = logger;
 		}
 
-		public List<Check> Warm()
+		public IList<Check> Warm()
 		{
 			var checks = _config.Checks;
 
-		    Parallel.ForEach(checks, check =>
-		                                 {
-		                                     _requester.Check(check);
-		                                     _logger.Log(check);
-		                                 });
+			RunChecks(checks);
 
 			_logger.Close();
 
 			return checks;
+		}
+
+		protected virtual bool RunChecks(IList<Check> checks)
+		{
+			Parallel.ForEach(checks, check =>
+			{
+				_requester.Check(check);
+				_logger.Log(check);
+			});
+
+			return true;
 		}
 	}
 }

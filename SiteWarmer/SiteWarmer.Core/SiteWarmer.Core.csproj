@@ -50,6 +50,7 @@
     <Compile Include="Logging\LoggerCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Comms\Requester.cs" />
+    <Compile Include="RepeatWarmer.cs" />
     <Compile Include="Warmer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

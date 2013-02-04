@@ -11,6 +11,9 @@ namespace SiteWarmer.App
 		[Option("l", "logerror", Required = false, DefaultValue = false, HelpText = "If you wish to create a log file of all the non-passing checks")]
 		public bool LogError { get; set; }
 
+        [Option("r", "retries", Required = false, DefaultValue = 0, HelpText = "The number of times to retry non-successful http calls")]
+        public int Retries { get; set; }
+
         [HelpOption]
         public string GetUsage()
         {
