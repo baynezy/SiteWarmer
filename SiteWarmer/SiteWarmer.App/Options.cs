@@ -3,7 +3,7 @@ using CommandLine.Text;
 
 namespace SiteWarmer.App
 {
-	class Options
+	public class Options
 	{
 		[Option("i", "input", Required = true, HelpText = "This is the input file containing the urls to warm")]
 		public string Inputfile { get; set; }
