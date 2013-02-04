@@ -7,14 +7,14 @@ namespace SiteWarmer.App.Test
 	class LoggerFactoryTest
 	{
 		[Test]
-		public void CreateLogger_WhenLoggingErrors_ShoudReturnLoggerCollection()
+		public void Create_WhenLoggingErrors_ShoudReturnLoggerCollection()
 		{
 			var options = new Options
 				{
 					LogError = true
 				};
 			
-			var logger = LoggerFactory.CreateLogger(options);
+			var logger = LoggerFactory.Create(options);
 
 			Assert.IsInstanceOf(typeof(LoggerCollection), logger);
 
@@ -24,14 +24,14 @@ namespace SiteWarmer.App.Test
 		}
 
 		[Test]
-		public void CreateLogger_WhenNotLoggingErrors_ShoudReturnConsoleLogger()
+		public void Create_WhenNotLoggingErrors_ShoudReturnConsoleLogger()
 		{
 			var options = new Options
 			{
 				LogError = false
 			};
 
-			var logger = LoggerFactory.CreateLogger(options);
+			var logger = LoggerFactory.Create(options);
 
 			Assert.IsInstanceOf(typeof(ConsoleLogger), logger);
 		}

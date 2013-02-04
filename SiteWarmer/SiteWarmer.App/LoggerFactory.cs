@@ -4,7 +4,7 @@ namespace SiteWarmer.App
 {
 	public class LoggerFactory
 	{
-		public static ILogger CreateLogger(Options options)
+		public static ILogger Create(Options options)
 		{
 			ILogger logger;
 
