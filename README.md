@@ -4,6 +4,8 @@ Allows you to hit your sites after a deployment to make sure they are running.
 
 ## Usage
 
+See full Wiki https://github.com/baynezy/SiteWarmer/wiki
+
 ### Config file
 
 You need to specify the URLs you want to use in a text file. They need to be one per line to work
