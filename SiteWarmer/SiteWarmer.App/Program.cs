@@ -18,31 +18,9 @@ namespace SiteWarmer.App
 			{
 				var config = new FileConfig(options.Inputfile);
 				var requester = new Requester();
-				ILogger logger;
+				var logger = CreateLogger(options);
 
-				if (options.LogError)
-				{
-					var collection = new LoggerCollection();
-					collection.Add(new ConsoleLogger());
-					collection.Add(new FileLogger());
-
-					logger = collection;
-				}
-				else
-				{
-					logger = new ConsoleLogger();
-				}
-
-				Warmer warmer;
-
-				if (options.Retries > 1)
-				{
-					warmer = new RepeatWarmer(config, requester, logger, options.Retries);
-				}
-				else
-				{
-					warmer = new Warmer(config, requester, logger);
-				}
+				var warmer = CreateWarmer(config, requester, logger, options);
 
 				warmer.Warm();
 			}
@@ -50,6 +28,31 @@ namespace SiteWarmer.App
 			{
 				Environment.Exit(1);
 			}
+		}
+
+		private static ILogger CreateLogger(Options options)
+		{
+			ILogger logger;
+			
+			if (options.LogError)
+			{
+				var collection = new LoggerCollection();
+				collection.Add(new ConsoleLogger());
+				collection.Add(new FileLogger());
+
+				logger = collection;
+			}
+			else
+			{
+				logger = new ConsoleLogger();
+			}
+
+			return logger;
+		}
+
+		private static Warmer CreateWarmer(IConfig config, IRequester requester, ILogger logger, Options options)
+		{
+			return options.Retries > 1 ? new RepeatWarmer(config, requester, logger, options.Retries) : new Warmer(config, requester, logger);
 		}
 	}
 }
