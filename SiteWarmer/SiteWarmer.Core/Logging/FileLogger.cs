@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
@@ -7,11 +8,13 @@ namespace SiteWarmer.Core.Logging
 	public class FileLogger : ILogger
 	{
 		private static IList<Check> _checks;
+		private static IDictionary<Check, bool> _tracker;
 		private const string LogFile = "error.log";
 
 		public FileLogger()
 		{
 			_checks = new List<Check>();
+			_tracker = new Dictionary<Check, bool>();
 		}
 
 		public void Log(Check check)
@@ -60,7 +63,11 @@ namespace SiteWarmer.Core.Logging
 
 		private static void AppendError(Check check)
 		{
-			_checks.Add(check);
+			if (!_tracker.ContainsKey(check))
+			{
+				_checks.Add(check);
+				_tracker.Add(check, true);
+			}
 		}
 	}
 }
