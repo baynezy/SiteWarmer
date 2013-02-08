@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
@@ -9,12 +7,14 @@ namespace SiteWarmer.Core.Logging
 	{
 		private static IList<Check> _checks;
 		private static IDictionary<Check, bool> _tracker;
+		private readonly IFileHelper _helper;
 		private const string LogFile = "error.log";
 
-		public FileLogger()
+		public FileLogger(IFileHelper helper)
 		{
 			_checks = new List<Check>();
 			_tracker = new Dictionary<Check, bool>();
+			_helper = helper;
 		}
 
 		public void Log(Check check)
@@ -29,20 +29,17 @@ namespace SiteWarmer.Core.Logging
             if (!AnyCheckErrored()) return;
             
             InitializeLog();
-			using (var writer = File.AppendText(LogFile))
+			foreach (var check in _checks)
 			{
-				foreach (var check in _checks)
-				{
-					writer.WriteLine(check.Url);
-				}
+				_helper.WriteLine(LogFile, check.Url);
 			}
 		}
 
-		private static void InitializeLog()
+		private void InitializeLog()
 		{
-		    if (FileExists(LogFile)) return;
+		    if (_helper.FileExists(LogFile)) return;
 
-			CreateFile(LogFile);
+			_helper.CreateFile(LogFile);
 		}
 
 	    private static bool AnyCheckErrored()
@@ -50,24 +47,11 @@ namespace SiteWarmer.Core.Logging
 	        return _checks.Count != 0;
 	    }
 
-	    private static bool FileExists(string errorLog)
-		{
-			return File.Exists(Path.GetFullPath(errorLog));
-		}
-
-		private static void CreateFile(string errorLog)
-		{
-			var file = File.CreateText(Path.GetFullPath(errorLog));
-			file.Close();
-		}
-
 		private static void AppendError(Check check)
 		{
-			if (!_tracker.ContainsKey(check))
-			{
-				_checks.Add(check);
-				_tracker.Add(check, true);
-			}
+			if (_tracker.ContainsKey(check)) return;
+			_checks.Add(check);
+			_tracker.Add(check, true);
 		}
 	}
 }

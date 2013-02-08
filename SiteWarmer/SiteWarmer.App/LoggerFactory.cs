@@ -12,7 +12,7 @@ namespace SiteWarmer.App
 			{
 				var collection = new LoggerCollection();
 				collection.Add(new ConsoleLogger());
-				collection.Add(new FileLogger());
+				collection.Add(new FileLogger(new FileHelper()));
 
 				logger = collection;
 			}

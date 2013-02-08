@@ -43,8 +43,10 @@
     <Compile Include="Config\Check.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />
     <Compile Include="Config\FileConfig.cs" />
+    <Compile Include="Logging\FileHelper.cs" />
     <Compile Include="Logging\FileLogger.cs" />
     <Compile Include="Config\IConfig.cs" />
+    <Compile Include="Logging\IFileHelper.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Comms\IRequester.cs" />
     <Compile Include="Logging\LoggerCollection.cs" />
