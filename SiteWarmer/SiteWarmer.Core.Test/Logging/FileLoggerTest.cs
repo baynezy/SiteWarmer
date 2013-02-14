@@ -13,7 +13,7 @@ namespace SiteWarmer.Core.Test.Logging
 		{
 			var logger = new FileLogger(new Mock<IFileHelper>().Object);
 
-			Assert.IsInstanceOf(typeof(ILogger), logger);
+			Assert.IsInstanceOf<ILogger>(logger);
 		}
 
 		[Test]

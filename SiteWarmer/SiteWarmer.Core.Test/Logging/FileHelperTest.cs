@@ -11,7 +11,7 @@ namespace SiteWarmer.Core.Test.Logging
 		{
 			var fileHelper = new FileHelper();
 
-			Assert.IsInstanceOf(typeof(IFileHelper), fileHelper);
+			Assert.IsInstanceOf<IFileHelper>(fileHelper);
 		}
 	}
 }

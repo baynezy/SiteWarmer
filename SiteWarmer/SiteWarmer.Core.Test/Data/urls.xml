@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<checks>
+	<check>
+		<url>http://www.yahoo.com/</url>
+		<content>
+			<item>yahoo</item>
+		</content>
+	</check>
+	<check>
+		<url>http://www.google.com/</url>
+		<content>
+			<item>google</item>
+		</content>
+	</check>
+	<check>
+		<url>http://www.github.com/</url>
+		<content>
+			<item>github</item>
+		</content>
+	</check>
+	<check>
+		<url>http://www.bbc.co.uk/</url>
+		<content>
+			<item>bbc</item>
+		</content>
+	</check>
+</checks>

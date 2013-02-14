@@ -17,7 +17,7 @@ namespace SiteWarmer.Core.Test
 		{
 			var warmer = new RepeatWarmer(null, null, null, 1);
 
-			Assert.IsInstanceOf(typeof(RepeatWarmer), warmer);
+			Assert.IsInstanceOf<RepeatWarmer>(warmer);
 		}
 
 		[Test]

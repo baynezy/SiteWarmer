@@ -34,7 +34,7 @@ namespace SiteWarmer.Core.Test.Logging
 		{
 			var collection = new LoggerCollection();
 
-			Assert.IsInstanceOf(typeof(ILogger), collection);
+			Assert.IsInstanceOf<ILogger>(collection);
 		}
 
 		[Test]

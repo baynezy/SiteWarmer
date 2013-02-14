@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\FileConfigTest.cs" />
+    <Compile Include="Config\XmlConfigTest.cs" />
     <Compile Include="Logging\FileHelperTest.cs" />
     <Compile Include="Logging\FileLoggerTest.cs" />
     <Compile Include="Logging\LoggerCollectionTest.cs" />
@@ -63,8 +64,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\empty_items.xml" />
+    <Content Include="Data\empty.xml" />
     <Content Include="Data\fail.txt" />
     <Content Include="Data\urls.txt" />
+    <Content Include="Data\urls.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
