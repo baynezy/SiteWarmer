@@ -6,7 +6,6 @@ namespace SiteWarmer.Core.Config
 	{
 		public static int Ok = 200;
 		private string _source = "";
-		private bool _passed;
 		private IList<ContentMatch> _contentMatches = new List<ContentMatch>();
 		public string Url { get; set; }
 		public int Status { get; set; }
