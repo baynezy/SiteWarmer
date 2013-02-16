@@ -7,7 +7,8 @@ namespace SiteWarmer.Core.Logging
 	{
 		public void Log(Check check)
 		{
-			Console.WriteLine(String.Format("{0}: {1}", check.Status, check.Url));
+			var passed = (check.Passed()) ? "Passed" : "Failed";
+			Console.WriteLine(String.Format("{0}: {1} - {2}", check.Status, check.Url, passed));
 		}
 
 		public void Close()

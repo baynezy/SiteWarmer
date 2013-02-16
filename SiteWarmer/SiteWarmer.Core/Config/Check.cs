@@ -6,6 +6,7 @@ namespace SiteWarmer.Core.Config
 	{
 		public static int Ok = 200;
 		private string _source = "";
+		private bool _passed;
 		public string Url { get; set; }
 		public int Status { get; set; }
 		public string Source
@@ -15,5 +16,10 @@ namespace SiteWarmer.Core.Config
 		}
 
 		public IList<ContentMatch> ContentMatches { get; set; }
+
+		public bool Passed()
+		{
+			return Status == Ok;
+		}
 	}
 }
