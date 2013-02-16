@@ -46,7 +46,9 @@ namespace SiteWarmer.Core.Config
 
 		private bool CheckMatch(ContentMatch match)
 		{
-			return Source.IndexOf(match.Match, System.StringComparison.Ordinal) != -1;
+			var found = Source.IndexOf(match.Match, System.StringComparison.Ordinal) != -1;
+
+			return found == match.Required;
 		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 
@@ -31,7 +32,7 @@ namespace SiteWarmer.Core.Config
 			HandleNodes(nodes);
 		}
 
-		private void HandleNodes(XmlNodeList nodes)
+		private void HandleNodes(IEnumerable nodes)
 		{
 			foreach (XmlNode node in nodes)
 			{
@@ -42,12 +43,26 @@ namespace SiteWarmer.Core.Config
 
 				check.Url = urls[0].InnerText;
 
-				var checks = node.SelectNodes("content/item");
+				var positiveChecks = node.SelectNodes("content/positive");
+				var negativeChecks = node.SelectNodes("content/negative");
 
-				check.ContentMatches = (from XmlNode item in checks select new ContentMatch { Match = item.InnerText }).ToList();
+				var positiveMatches = (from XmlNode item in positiveChecks select new ContentMatch { Match = item.InnerText, Required = true}).ToList();
+				var negativeMatches = (from XmlNode item in negativeChecks select new ContentMatch { Match = item.InnerText, Required = false }).ToList();
+
+				check.ContentMatches = MergeMatches(positiveMatches, negativeMatches);
 
 				_checks.Add(check);
 			}
+		}
+
+		private static IList<ContentMatch> MergeMatches(ICollection<ContentMatch> positiveMatches, ICollection<ContentMatch> negativeMatches)
+		{
+			var matches = new List<ContentMatch>(positiveMatches.Count + negativeMatches.Count);
+
+			matches.AddRange(positiveMatches);
+			matches.AddRange(negativeMatches);
+
+			return matches;
 		}
 
 		public List<Check> Checks

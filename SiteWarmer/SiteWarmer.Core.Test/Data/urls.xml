@@ -3,25 +3,26 @@
 	<check>
 		<url>http://www.yahoo.com/</url>
 		<content>
-			<item>yahoo</item>
+			<positive>yahoo</positive>
+			<negative>qwerty</negative>
 		</content>
 	</check>
 	<check>
 		<url>http://www.google.com/</url>
 		<content>
-			<item>google</item>
+			<positive>google</positive>
 		</content>
 	</check>
 	<check>
 		<url>http://www.github.com/</url>
 		<content>
-			<item>github</item>
+			<positive>github</positive>
 		</content>
 	</check>
 	<check>
 		<url>http://www.bbc.co.uk/</url>
 		<content>
-			<item>bbc</item>
+			<positive>bbc</positive>
 		</content>
 	</check>
 </checks>
