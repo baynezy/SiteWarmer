@@ -43,7 +43,7 @@ namespace SiteWarmer.Core
 
 		private static IList<Check> OnlyErrors(IEnumerable<Check> checks)
 		{
-			return checks.Where(c => c.Status != Check.Ok).ToList();
+			return checks.Where(c => !c.Passed()).ToList();
 		}
 	}
 }

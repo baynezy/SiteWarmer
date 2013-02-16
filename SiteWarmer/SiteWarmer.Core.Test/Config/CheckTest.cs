@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Test.Config
@@ -26,6 +27,44 @@ namespace SiteWarmer.Core.Test.Config
 			};
 
 			Assert.False(check.Passed());
+		}
+
+		[Test]
+		public void Passed_WhenStatusCodeIs200AndAContentMatchFails_ThenReturnFalse()
+		{
+			var check = new Check
+			{
+				Status = Check.Ok,
+				Source = "This is the test source.",
+				ContentMatches = new List<ContentMatch>
+						{
+							new ContentMatch
+								{
+									Match = "match"
+								}
+						}
+			};
+
+			Assert.False(check.Passed());
+		}
+
+		[Test]
+		public void Passed_WhenStatusCodeIs200AndAContentMatchPasses_ThenReturnTrue()
+		{
+			var check = new Check
+			{
+				Status = Check.Ok,
+				Source = "This is the test source containing a match.",
+				ContentMatches = new List<ContentMatch>
+						{
+							new ContentMatch
+								{
+									Match = "match"
+								}
+						}
+			};
+
+			Assert.True(check.Passed());
 		}
 	}
 }
