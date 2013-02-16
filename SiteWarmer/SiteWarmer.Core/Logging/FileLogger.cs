@@ -19,7 +19,7 @@ namespace SiteWarmer.Core.Logging
 
 		public void Log(Check check)
 		{
-			if (check.Status == Check.Ok) return;
+			if (check.Passed()) return;
 
 			AppendError(check);
 		}

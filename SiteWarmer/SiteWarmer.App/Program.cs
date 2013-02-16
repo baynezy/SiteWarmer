@@ -14,7 +14,7 @@ namespace SiteWarmer.App
 
 			if (parser.ParseArguments(args, options, Console.Error))
 			{
-				var config = new FileConfig(options.Inputfile);
+				var config = ConfigFactory.Create(options);
 				var requester = new Requester();
 				var logger = LoggerFactory.Create(options);
 

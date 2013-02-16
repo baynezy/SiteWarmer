@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigFactory.cs" />
     <Compile Include="LoggerFactory.cs" />
     <Compile Include="Options.cs" />
     <Compile Include="Program.cs" />
