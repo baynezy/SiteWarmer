@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.IO;
+using System.Net;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Comms
@@ -7,23 +8,45 @@ namespace SiteWarmer.Core.Comms
 	{
 		public void Check(Check check)
 		{
-			check.Status = GetStatus(check.Url);
+			RunCheck(check);
 		}
 
-		private static int GetStatus(string url)
+		private static void RunCheck(Check check)
 		{
-			var request = (HttpWebRequest) WebRequest.Create(url);
+			var request = (HttpWebRequest) WebRequest.Create(check.Url);
 			request.Timeout = 10000;
+			HttpWebResponse response;
 			try
 			{
-				var response = (HttpWebResponse) request.GetResponse();
-				return (int) response.StatusCode;
+				response = (HttpWebResponse) request.GetResponse();
 			}
 			catch (WebException e)
 			{
-				var webResponse = ((HttpWebResponse) e.Response);
-				return (webResponse == null) ? 500 : (int)webResponse.StatusCode;
+				response = ((HttpWebResponse)e.Response);
 			}
+
+			if (response == null)
+			{
+				check.Status = 500;
+			}
+			else
+			{
+				check.Status = (int) response.StatusCode;
+				check.Source = GetSource(response);
+			}
+		}
+
+		private static string GetSource(WebResponse response)
+		{
+			var stream = response.GetResponseStream();
+			var html = "";
+			if (stream != null)
+			{
+				var reader = new StreamReader(stream);
+				html = reader.ReadToEnd();
+			}
+			
+			return html;
 		}
 	}
 }

@@ -44,5 +44,22 @@ namespace SiteWarmer.Core.Test.Comms
 
 			Assert.AreEqual(404, check.Status);
 		}
+
+		[Test]
+		public void Check_CallsExistingPage_ReturnsCorrectContent()
+		{
+			var check = new Check { Url = "http://www.github.com/" };
+
+			_requester.Check(check);
+
+			AssertContainsString("<title>GitHub · Build software better, together.</title>", check.Source);
+		}
+
+		private static void AssertContainsString(string expected, string actual)
+		{
+			var match = actual.IndexOf(expected, System.StringComparison.Ordinal);
+
+			Assert.AreNotEqual(-1, match, string.Format("'{0}' was not present in the source", expected));
+		}
 	}
 }
