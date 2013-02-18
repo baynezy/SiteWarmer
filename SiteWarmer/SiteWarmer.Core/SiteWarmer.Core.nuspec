@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>3.0.3</version>
+    <title>SiteWarmer - For Making Sure Your Sites Have Started After A Deployment</title>
+    <authors>Simon Baynes</authors>
+    <owners>Simon Baynes</owners>
+    <projectUrl>https://github.com/baynezy/SiteWarmer</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is a library of tools for checking that your sites have restarted after a deployment.</description>
+    <!--
+	<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+	-->
+    <copyright>Copyright 2013</copyright>
+    <tags>deployments checking</tags>
+  </metadata>
+</package>
