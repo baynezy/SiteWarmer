@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>3.0.3</version>
+    <version>$version$</version>
     <title>SiteWarmer - For Making Sure Your Sites Have Started After A Deployment</title>
     <authors>Simon Baynes</authors>
     <owners>Simon Baynes</owners>
