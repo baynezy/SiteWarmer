@@ -13,7 +13,7 @@ namespace SiteWarmer.Core.Test.Config
 		{
 			var config = new XmlConfig(@"..\..\Data\urls.xml");
 
-			Assert.IsInstanceOf<IConfig>(config);
+			Assert.That(config, Is.InstanceOf<IConfig>());
 		}
 
 		[Test]
@@ -28,27 +28,27 @@ namespace SiteWarmer.Core.Test.Config
 
 			IList<ContentMatch> matches;
 
-			Assert.AreEqual(expectedNumberOfChecks, checks.Count);
+			Assert.That(checks.Count, Is.EqualTo(expectedNumberOfChecks));
 
-			Assert.AreEqual("http://www.yahoo.com/", checks[0].Url);
+			Assert.That(checks[0].Url, Is.EqualTo("http://www.yahoo.com/"));
 			matches = checks[0].ContentMatches;
-			Assert.AreEqual(expectedNumberOfPositiveContentMatches, matches.Count(m => m.Required));
-			Assert.AreEqual(expectedNumberOfNegativeContentMatches, matches.Count(m => !m.Required));
+			Assert.That(matches.Count(m => m.Required), Is.EqualTo(expectedNumberOfPositiveContentMatches));
+			Assert.That(matches.Count(m => !m.Required), Is.EqualTo(expectedNumberOfNegativeContentMatches));
 
-			Assert.AreEqual("http://www.google.com/", checks[1].Url);
+			Assert.That(checks[1].Url, Is.EqualTo("http://www.google.com/"));
 			matches = checks[1].ContentMatches;
-			Assert.AreEqual(expectedNumberOfPositiveContentMatches, matches.Count(m => m.Required));
-			Assert.AreEqual(0, matches.Count(m => !m.Required));
+			Assert.That(matches.Count(m => m.Required), Is.EqualTo(expectedNumberOfPositiveContentMatches));
+			Assert.That(matches.Count(m => !m.Required), Is.EqualTo(0));
 
-			Assert.AreEqual("http://www.github.com/", checks[2].Url);
+			Assert.That(checks[2].Url, Is.EqualTo("http://www.github.com/"));
 			matches = checks[2].ContentMatches;
-			Assert.AreEqual(expectedNumberOfPositiveContentMatches, matches.Count(m => m.Required));
-			Assert.AreEqual(0, matches.Count(m => !m.Required));
+			Assert.That(matches.Count(m => m.Required), Is.EqualTo(expectedNumberOfPositiveContentMatches));
+			Assert.That(matches.Count(m => !m.Required), Is.EqualTo(0));
 
-			Assert.AreEqual("http://www.bbc.co.uk/", checks[3].Url);
+			Assert.That(checks[3].Url, Is.EqualTo("http://www.bbc.co.uk/"));
 			matches = checks[3].ContentMatches;
-			Assert.AreEqual(expectedNumberOfPositiveContentMatches, matches.Count(m => m.Required));
-			Assert.AreEqual(0, matches.Count(m => !m.Required));
+			Assert.That(matches.Count(m => m.Required), Is.EqualTo(expectedNumberOfPositiveContentMatches));
+			Assert.That(matches.Count(m => !m.Required), Is.EqualTo(0));
 		}
 
 		[Test]
@@ -59,7 +59,7 @@ namespace SiteWarmer.Core.Test.Config
 
 			var checks = config.Checks;
 
-			Assert.AreEqual(expectedNumberOfChecks, checks.Count);
+			Assert.That(checks.Count, Is.EqualTo(expectedNumberOfChecks));
 		}
 
 		[Test]
@@ -70,7 +70,7 @@ namespace SiteWarmer.Core.Test.Config
 
 			var checks = config.Checks;
 
-			Assert.AreEqual(expectedNumberOfMatches, checks[0].ContentMatches.Count);
+			Assert.That(checks[0].ContentMatches.Count, Is.EqualTo(expectedNumberOfMatches));
 		}
 	}
 }

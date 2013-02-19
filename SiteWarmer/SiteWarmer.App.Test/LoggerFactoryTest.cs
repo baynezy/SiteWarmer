@@ -16,11 +16,11 @@ namespace SiteWarmer.App.Test
 			
 			var logger = LoggerFactory.Create(options);
 
-			Assert.IsInstanceOf<LoggerCollection>(logger);
+			Assert.That(logger, Is.InstanceOf<LoggerCollection>());
 
 			var collection = (LoggerCollection)logger;
 
-			Assert.AreEqual(2, collection.Size());
+			Assert.That(collection.Size(), Is.EqualTo(2));
 		}
 
 		[Test]
@@ -33,7 +33,7 @@ namespace SiteWarmer.App.Test
 
 			var logger = LoggerFactory.Create(options);
 
-			Assert.IsInstanceOf<ConsoleLogger>(logger);
+			Assert.That(logger, Is.InstanceOf<ConsoleLogger>());
 		}
 	}
 }

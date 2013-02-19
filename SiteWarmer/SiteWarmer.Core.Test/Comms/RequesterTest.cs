@@ -22,7 +22,7 @@ namespace SiteWarmer.Core.Test.Comms
 
 			_requester.Check(check);
 
-			Assert.AreEqual(200, check.Status);
+			Assert.That(check.Status, Is.EqualTo(Check.Ok));
 		}
 
 		[Test]
@@ -32,7 +32,7 @@ namespace SiteWarmer.Core.Test.Comms
 
 			_requester.Check(check);
 
-			Assert.AreEqual(500, check.Status);
+			Assert.That(check.Status, Is.EqualTo(500));
 		}
 
 		[Test]
@@ -42,7 +42,7 @@ namespace SiteWarmer.Core.Test.Comms
 
 			_requester.Check(check);
 
-			Assert.AreEqual(404, check.Status);
+			Assert.That(check.Status, Is.EqualTo(404));
 		}
 
 		[Test]

@@ -14,7 +14,7 @@ namespace SiteWarmer.Core.Test.Logging
 			const int expectedSize = 0;
 			var collection = new LoggerCollection();
 
-			Assert.AreEqual(expectedSize, collection.Size());
+			Assert.That(collection.Size(), Is.EqualTo(expectedSize));
 		}
 
 		[Test]
@@ -26,7 +26,7 @@ namespace SiteWarmer.Core.Test.Logging
 
 			collection.Add(logger);
 
-			Assert.AreEqual(expectedSize, collection.Size());
+			Assert.That(collection.Size(), Is.EqualTo(expectedSize));
 		}
 
 		[Test]
@@ -34,7 +34,7 @@ namespace SiteWarmer.Core.Test.Logging
 		{
 			var collection = new LoggerCollection();
 
-			Assert.IsInstanceOf<ILogger>(collection);
+			Assert.That(collection, Is.InstanceOf<ILogger>());
 		}
 
 		[Test]

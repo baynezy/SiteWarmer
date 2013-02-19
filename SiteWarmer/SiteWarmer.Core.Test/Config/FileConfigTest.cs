@@ -18,11 +18,11 @@ namespace SiteWarmer.Core.Test.Config
 		public void Checks_ReadingInCorrectFile_ReturnsChecksCorrectly()
 		{
 			var checks = _config.Checks;
-			Assert.AreEqual(4, checks.Count);
-			Assert.AreEqual("http://www.yahoo.com/", checks[0].Url);
-			Assert.AreEqual("http://www.google.com/", checks[1].Url);
-			Assert.AreEqual("http://www.github.com/", checks[2].Url);
-			Assert.AreEqual("http://www.bbc.co.uk/", checks[3].Url);
+			Assert.That(checks.Count, Is.EqualTo(4));
+			Assert.That(checks[0].Url, Is.EqualTo("http://www.yahoo.com/"));
+			Assert.That(checks[1].Url, Is.EqualTo("http://www.google.com/"));
+			Assert.That(checks[2].Url, Is.EqualTo("http://www.github.com/"));
+			Assert.That(checks[3].Url, Is.EqualTo("http://www.bbc.co.uk/"));
 		}
 	}
 }

@@ -24,7 +24,7 @@ namespace SiteWarmer.App.Test
 
 			var warmer = WarmerFactory.Create(options, config.Object, requester.Object, logger.Object);
 
-			Assert.IsInstanceOf<Warmer>(warmer);
+			Assert.That(warmer, Is.InstanceOf<Warmer>());
 		}
 
 		[Test]
@@ -41,7 +41,7 @@ namespace SiteWarmer.App.Test
 
 			var warmer = WarmerFactory.Create(options, config.Object, requester.Object, logger.Object);
 
-			Assert.IsInstanceOf<Warmer>(warmer);
+			Assert.That(warmer, Is.InstanceOf<Warmer>());
 		}
 
 		[Test]
@@ -58,7 +58,7 @@ namespace SiteWarmer.App.Test
 
 			var warmer = WarmerFactory.Create(options, config.Object, requester.Object, logger.Object);
 
-			Assert.IsInstanceOf<RepeatWarmer>(warmer);
+			Assert.That(warmer, Is.InstanceOf<RepeatWarmer>());
 		}
 	}
 }

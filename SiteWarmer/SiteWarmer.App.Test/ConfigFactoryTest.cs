@@ -16,7 +16,7 @@ namespace SiteWarmer.App.Test
 
 			var config = ConfigFactory.Create(options);
 
-			Assert.IsInstanceOf<XmlConfig>(config);
+			Assert.That(config, Is.InstanceOf<XmlConfig>());
 		}
 
 		[Test]
@@ -29,7 +29,7 @@ namespace SiteWarmer.App.Test
 
 			var config = ConfigFactory.Create(options);
 
-			Assert.IsInstanceOf<FileConfig>(config);
+			Assert.That(config, Is.InstanceOf<FileConfig>());
 		}
 	}
 }

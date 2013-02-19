@@ -15,7 +15,7 @@ namespace SiteWarmer.Core.Test.Config
 					Status = Check.Ok
 				};
 
-			Assert.True(check.Passed());
+			Assert.That(check.Passed(), Is.True);
 		}
 
 		[Test]
@@ -26,7 +26,7 @@ namespace SiteWarmer.Core.Test.Config
 				Status = 500
 			};
 
-			Assert.False(check.Passed());
+			Assert.That(check.Passed(), Is.False);
 		}
 
 		[Test]
@@ -46,7 +46,7 @@ namespace SiteWarmer.Core.Test.Config
 						}
 			};
 
-			Assert.False(check.Passed());
+			Assert.That(check.Passed(), Is.False);
 		}
 
 		[Test]
@@ -66,7 +66,7 @@ namespace SiteWarmer.Core.Test.Config
 						}
 			};
 
-			Assert.True(check.Passed());
+			Assert.That(check.Passed(), Is.True);
 		}
 
 		[Test]
@@ -86,7 +86,7 @@ namespace SiteWarmer.Core.Test.Config
 						}
 			};
 
-			Assert.True(check.Passed());
+			Assert.That(check.Passed(), Is.True);
 		}
 
 		[Test]
@@ -106,7 +106,7 @@ namespace SiteWarmer.Core.Test.Config
 						}
 			};
 
-			Assert.False(check.Passed());
+			Assert.That(check.Passed(), Is.False);
 		}
 	}
 }

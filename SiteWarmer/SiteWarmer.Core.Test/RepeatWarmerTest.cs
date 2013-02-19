@@ -17,7 +17,7 @@ namespace SiteWarmer.Core.Test
 		{
 			var warmer = new RepeatWarmer(null, null, null, 1);
 
-			Assert.IsInstanceOf<RepeatWarmer>(warmer);
+			Assert.That(warmer, Is.InstanceOf<RepeatWarmer>());
 		}
 
 		[Test]
@@ -32,9 +32,9 @@ namespace SiteWarmer.Core.Test
 
 			var results = warmer.Warm();
 
-			Assert.AreEqual(1, results.Count);
+			Assert.That(results.Count, Is.EqualTo(1));
 
-			Assert.AreEqual(Check.Ok, results[0].Status);
+			Assert.That(results[0].Status, Is.EqualTo(Check.Ok));
 		}
 
 		[Test]
@@ -49,7 +49,7 @@ namespace SiteWarmer.Core.Test
 
 			var results = warmer.Warm();
 
-			Assert.AreEqual(1, results.Count);
+			Assert.That(results.Count, Is.EqualTo(1));
 
 			Assert.AreNotEqual(Check.Ok, results[0].Status);
 		}
