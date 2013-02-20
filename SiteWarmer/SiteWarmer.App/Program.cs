@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using CommandLine;
 using SiteWarmer.Core.Comms;
 using SiteWarmer.Core.Config;
@@ -14,13 +15,23 @@ namespace SiteWarmer.App
 
 			if (parser.ParseArguments(args, options, Console.Error))
 			{
-				var config = ConfigFactory.Create(options);
-				var requester = new Requester();
-				var logger = LoggerFactory.Create(options);
+				try
+				{
+					var config = ConfigFactory.Create(options);
+					var requester = new Requester();
+					var logger = LoggerFactory.Create(options);
 
-				var warmer = WarmerFactory.Create(options, config, requester, logger);
+					var warmer = WarmerFactory.Create(options, config, requester, logger);
 
-				warmer.Warm();
+					warmer.Warm();
+				}
+				catch (XmlException e)
+				{
+					Console.WriteLine("");
+					Console.WriteLine("Invalid XML Config File");
+					Console.WriteLine("-----------------------");
+					Console.WriteLine(e.Message);
+				}
 			}
 			else
 			{

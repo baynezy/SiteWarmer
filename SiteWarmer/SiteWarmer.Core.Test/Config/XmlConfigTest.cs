@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using NUnit.Framework;
 using SiteWarmer.Core.Config;
 
@@ -71,6 +72,12 @@ namespace SiteWarmer.Core.Test.Config
 			var checks = config.Checks;
 
 			Assert.That(checks[0].ContentMatches.Count, Is.EqualTo(expectedNumberOfMatches));
+		}
+
+		[Test, ExpectedException(typeof(XmlException))]
+		public void XmlConfig_WhenTheXmlIsInvalid_ThenThrowXmlException()
+		{
+			new XmlConfig(@"..\..\Data\invalid.xml");
 		}
 	}
 }

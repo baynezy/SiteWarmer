@@ -65,6 +65,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\invalid.xml" />
     <Content Include="Data\empty_items.xml" />
     <Content Include="Data\empty.xml" />
     <Content Include="Data\fail.txt" />
