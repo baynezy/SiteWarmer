@@ -15,10 +15,23 @@ namespace SiteWarmer.Core.Comms
 		{
 			var request = (HttpWebRequest) WebRequest.Create(check.Url);
 			request.Timeout = 10000;
+			HttpWebResponse response = null;
+			try
+			{
+				response = ParseRequest(request, check);
+			}
+			finally
+			{
+				if (response != null) response.Close();
+			}
+		}
+
+		private static HttpWebResponse ParseRequest(WebRequest request, Check check)
+		{
 			HttpWebResponse response;
 			try
 			{
-				response = (HttpWebResponse) request.GetResponse();
+				response = (HttpWebResponse)request.GetResponse();
 			}
 			catch (WebException e)
 			{
@@ -31,9 +44,11 @@ namespace SiteWarmer.Core.Comms
 			}
 			else
 			{
-				check.Status = (int) response.StatusCode;
+				check.Status = (int)response.StatusCode;
 				check.Source = GetSource(response);
 			}
+
+			return response;
 		}
 
 		private static string GetSource(WebResponse response)
