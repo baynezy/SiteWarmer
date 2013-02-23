@@ -53,15 +53,19 @@ namespace SiteWarmer.Core.Comms
 
 		private static string GetSource(WebResponse response)
 		{
-			var stream = response.GetResponseStream();
-			var html = "";
-			if (stream != null)
+			using (var stream = response.GetResponseStream())
 			{
-				var reader = new StreamReader(stream);
-				html = reader.ReadToEnd();
+				var html = "";
+				if (stream != null)
+				{
+					using (var reader = new StreamReader(stream))
+					{
+						html = reader.ReadToEnd();
+					}
+				}
+
+				return html;
 			}
-			
-			return html;
 		}
 	}
 }
