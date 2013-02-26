@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Reflection;
 using System.Xml;
 using CommandLine;
 using SiteWarmer.Core.Comms;
-using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.App
 {
@@ -15,6 +15,12 @@ namespace SiteWarmer.App
 
 			if (parser.ParseArguments(args, options, Console.Error))
 			{
+				if (ShouldShowVersion(options))
+				{
+					OutputVersion();
+					return;
+				}
+
 				try
 				{
 					var config = ConfigFactory.Create(options);
@@ -37,6 +43,24 @@ namespace SiteWarmer.App
 			{
 				Environment.Exit(1);
 			}
+		}
+
+		private static bool ShouldShowVersion(Options options)
+		{
+			return options.Version;
+		}
+
+		private static void OutputVersion()
+		{
+			Console.WriteLine("SiteWarmer - Version " + CalculateVersion());
+		}
+
+		private static string CalculateVersion()
+		{
+			var assembly = Assembly.LoadFrom("SiteWarmer.Core.dll");
+			var version = assembly.GetName().Version;
+
+			return version.ToString();
 		}
 	}
 }
