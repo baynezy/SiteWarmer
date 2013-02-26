@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Xml;
 using CommandLine;
 using SiteWarmer.Core.Comms;
@@ -57,10 +56,7 @@ namespace SiteWarmer.App
 
 		private static string CalculateVersion()
 		{
-			var assembly = Assembly.LoadFrom("SiteWarmer.Core.dll");
-			var version = assembly.GetName().Version;
-
-			return version.ToString();
+			return Version.GetAppVersion();
 		}
 	}
 }
