@@ -133,7 +133,7 @@ namespace SiteWarmer.Core.Test.Logging
 			fileHelper.Verify(f => f.WriteLine(It.IsAny<string>(), It.IsAny<string>()), Times.Once());
 		}
 
-		private void LoggedAnErroringCheckThenClosed(Mock<IFileHelper> fileHelper)
+		private static void LoggedAnErroringCheckThenClosed(Mock<IFileHelper> fileHelper)
 		{
 			var logger = new FileLogger(fileHelper.Object);
 
@@ -167,6 +167,76 @@ namespace SiteWarmer.Core.Test.Logging
 			logger.Close();
 
 			fileHelper.Verify(f => f.WriteLine(It.IsAny<string>(), It.IsAny<string>()), Times.Exactly(2));
+		}
+
+		[Test]
+		public void Close_WhenThereIsOneCheckWhichFailedButEventuallyPassed_ThenItShouldNotCreateTheFile()
+		{
+			var helper = new Mock<IFileHelper>();
+			helper.Setup(m => m.CreateFile(It.IsAny<string>()));
+			helper.Setup(m => m.FileExists(It.IsAny<string>())).Returns(false);
+			helper.Setup(m => m.WriteLine(It.IsAny<string>(), It.IsAny<string>()));
+
+			var logger = new FileLogger(helper.Object);
+
+			var check = new Check
+				{
+					Url = "http://www.google.com/",
+					Status = 500
+				};
+
+			logger.Log(check);
+
+			check.Status = Check.Ok;
+
+			logger.Log(check);
+
+			logger.Close();
+
+			helper.Verify(f => f.FileExists(It.IsAny<string>()), Times.Never());
+			helper.Verify(f => f.CreateFile(It.IsAny<string>()), Times.Never());
+			helper.Verify(f => f.WriteLine(It.IsAny<string>(), It.IsAny<string>()), Times.Never());
+		}
+
+		[Test]
+		public void Close_WhenACheckFailsButEventuallyPasses_ThenItShouldNotGetLogged()
+		{
+			const string passingUrl = "http://www.google.com/";
+			const string failingUrl = "http://www.yahoo.com/";
+			
+			var helper = new Mock<IFileHelper>();
+			helper.Setup(m => m.CreateFile(It.IsAny<string>()));
+			helper.Setup(m => m.FileExists(It.IsAny<string>())).Returns(false);
+			helper.Setup(m => m.WriteLine(It.IsAny<string>(), It.IsAny<string>()));
+
+			var logger = new FileLogger(helper.Object);
+
+			var check = new Check
+			{
+				Url = passingUrl,
+				Status = 500
+			};
+
+			logger.Log(check);
+
+			check.Status = Check.Ok;
+
+			logger.Log(check);
+
+			var failedCheck = new Check
+				{
+					Url = failingUrl,
+					Status = 500
+				};
+
+			logger.Log(failedCheck);
+
+			logger.Close();
+
+			helper.Verify(f => f.FileExists(It.IsAny<string>()), Times.Once());
+			helper.Verify(f => f.CreateFile(It.IsAny<string>()), Times.Once());
+			helper.Verify(f => f.WriteLine(It.IsAny<string>(), failingUrl), Times.Once());
+			helper.Verify(f => f.WriteLine(It.IsAny<string>(), passingUrl), Times.Never());
 		}
 	}
 }
