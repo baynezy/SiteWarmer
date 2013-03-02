@@ -1,6 +1,6 @@
 ﻿using SiteWarmer.Core.Logging;
 
-namespace SiteWarmer.App
+namespace SiteWarmer.App.Factories
 {
 	public class LoggerFactory
 	{

@@ -1,11 +1,12 @@
 ﻿using Moq;
 using NUnit.Framework;
+using SiteWarmer.App.Factories;
 using SiteWarmer.Core;
 using SiteWarmer.Core.Comms;
 using SiteWarmer.Core.Config;
 using SiteWarmer.Core.Logging;
 
-namespace SiteWarmer.App.Test
+namespace SiteWarmer.App.Test.Factories
 {
 	[TestFixture]
 	class WarmerFactoryTest

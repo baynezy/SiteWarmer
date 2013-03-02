@@ -1,6 +1,6 @@
 ﻿using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.App
+namespace SiteWarmer.App.Factories
 {
 	public class ConfigFactory
 	{

@@ -3,7 +3,7 @@ using SiteWarmer.Core.Comms;
 using SiteWarmer.Core.Config;
 using SiteWarmer.Core.Logging;
 
-namespace SiteWarmer.App
+namespace SiteWarmer.App.Factories
 {
 	public class WarmerFactory
 	{

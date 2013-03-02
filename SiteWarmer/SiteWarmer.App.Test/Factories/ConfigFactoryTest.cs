@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
+using SiteWarmer.App.Factories;
 using SiteWarmer.Core.Config;
 
-namespace SiteWarmer.App.Test
+namespace SiteWarmer.App.Test.Factories
 {
 	[TestFixture]
 	class ConfigFactoryTest

@@ -1,7 +1,8 @@
 ﻿using NUnit.Framework;
+using SiteWarmer.App.Factories;
 using SiteWarmer.Core.Logging;
 
-namespace SiteWarmer.App.Test
+namespace SiteWarmer.App.Test.Factories
 {
 	[TestFixture]
 	class LoggerFactoryTest

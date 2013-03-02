@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using CommandLine;
+using SiteWarmer.App.Factories;
 using SiteWarmer.Core.Comms;
 
 namespace SiteWarmer.App
