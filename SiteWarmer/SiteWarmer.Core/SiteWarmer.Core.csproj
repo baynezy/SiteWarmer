@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Config\Check.cs" />
     <Compile Include="Config\ContentMatch.cs" />
     <Compile Include="Config\XmlConfig.cs" />
