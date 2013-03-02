@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
@@ -19,20 +20,46 @@ namespace SiteWarmer.Core.Logging
 
 		public void Log(Check check)
 		{
-			if (check.Passed()) return;
+			if (check.Passed())
+			{
+				RemoveError(check);
+			}
+			else
+			{
+				AppendError(check);
+			}
+		}
 
-			AppendError(check);
+		private static void RemoveError(Check check)
+		{
+			if (_tracker.ContainsKey(check))
+			{
+				_tracker.Remove(check);
+			}
+		}
+
+		private static void AppendError(Check check)
+		{
+			if (_tracker.ContainsKey(check)) return;
+			_checks.Add(check);
+			_tracker.Add(check, true);
 		}
 
 		public void Close()
 		{
-            if (!AnyCheckErrored()) return;
+			var failedChecks = FindFailedChecks();
+            if (failedChecks.Count == 0) return;
             
             InitializeLog();
-			foreach (var check in _checks)
+			foreach (var check in failedChecks)
 			{
 				_helper.WriteLine(LogFile, check.Url);
 			}
+		}
+
+		private static IList<Check> FindFailedChecks()
+		{
+			return _checks.Where(check => _tracker.ContainsKey(check)).ToList();
 		}
 
 		private void InitializeLog()
@@ -40,18 +67,6 @@ namespace SiteWarmer.Core.Logging
 		    if (_helper.FileExists(LogFile)) return;
 
 			_helper.CreateFile(LogFile);
-		}
-
-	    private static bool AnyCheckErrored()
-	    {
-	        return _checks.Count != 0;
-	    }
-
-		private static void AppendError(Check check)
-		{
-			if (_tracker.ContainsKey(check)) return;
-			_checks.Add(check);
-			_tracker.Add(check, true);
 		}
 	}
 }
