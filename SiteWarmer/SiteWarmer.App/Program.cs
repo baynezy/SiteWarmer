@@ -11,9 +11,9 @@ namespace SiteWarmer.App
 		static void Main(string[] args)
 		{
 			var options = new Options();
-			var parser = new CommandLineParser();
+			var parser = new Parser();
 
-			if (parser.ParseArguments(args, options, Console.Error))
+			if (parser.ParseArguments(args, options))
 			{
 				if (ShouldShowVersion(options))
 				{
