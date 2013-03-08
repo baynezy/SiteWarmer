@@ -7,6 +7,7 @@ namespace SiteWarmer.Core.Logging
 	{
 		private static ConsoleColor _originalTextColour;
 		private const ConsoleColor ErrorTextColour = ConsoleColor.Red;
+		private const ConsoleColor SuccessTextColour = ConsoleColor.Green;
 
 		public ConsoleLogger()
 		{
@@ -30,7 +31,9 @@ namespace SiteWarmer.Core.Logging
 
 		private static void WritePass(Check check, string passed)
 		{
+			Console.ForegroundColor = SuccessTextColour;
 			WriteToConsole(check, passed);
+			Console.ForegroundColor = _originalTextColour;
 		}
 
 		private static void WriteFail(Check check, string passed)
