@@ -6,6 +6,7 @@ namespace SiteWarmer.Core.Logging
 	public class ConsoleLogger : ILogger
 	{
 		private static ConsoleColor _originalTextColour;
+		private static readonly object LockObject = new object();
 		private const ConsoleColor ErrorTextColour = ConsoleColor.Red;
 		private const ConsoleColor SuccessTextColour = ConsoleColor.Green;
 
@@ -31,16 +32,23 @@ namespace SiteWarmer.Core.Logging
 
 		private static void WritePass(Check check, string passed)
 		{
-			Console.ForegroundColor = SuccessTextColour;
-			WriteToConsole(check, passed);
-			Console.ForegroundColor = _originalTextColour;
+			WriteToConsoleInColour(check, passed, SuccessTextColour);
 		}
 
 		private static void WriteFail(Check check, string passed)
 		{
-			Console.ForegroundColor = ErrorTextColour;
-			WriteToConsole(check, passed);
-			Console.ForegroundColor = _originalTextColour;
+			WriteToConsoleInColour(check, passed, ErrorTextColour);
+		}
+
+		private static void WriteToConsoleInColour(Check check, string passed, ConsoleColor textColour)
+		{
+			// this is necessary as this can get called by multiple threads and it can cause the colours to get output incorrectly
+			lock (LockObject)
+			{
+				Console.ForegroundColor = textColour;
+				WriteToConsole(check, passed);
+				Console.ForegroundColor = _originalTextColour;	
+			}
 		}
 
 		private static void WriteToConsole(Check check, string passed)
