@@ -6,6 +6,9 @@ using SiteWarmer.Core.Logging;
 
 namespace SiteWarmer.Core
 {
+	/// <summary>
+	/// Warms Urls and logs the results. Repeats any failed checks as many times as you indicate
+	/// </summary>
 	public class RepeatWarmer : Warmer
 	{
 		private readonly int _timesToRepeat;

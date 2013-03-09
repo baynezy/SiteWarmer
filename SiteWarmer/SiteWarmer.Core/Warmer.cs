@@ -6,6 +6,9 @@ using SiteWarmer.Core.Logging;
 
 namespace SiteWarmer.Core
 {
+	/// <summary>
+	/// Warms Urls and logs the results
+	/// </summary>
 	public class Warmer
 	{
 		private readonly IConfig _config;
