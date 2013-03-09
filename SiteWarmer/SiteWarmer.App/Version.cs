@@ -6,7 +6,7 @@ namespace SiteWarmer.App
 	{
 		public static string GetAppVersion()
 		{
-			var assembly = Assembly.LoadFrom("SiteWarmer.Core.dll");
+			var assembly = Assembly.GetCallingAssembly();
 			var version = assembly.GetName().Version;
 			return version.ToString();
 		}
