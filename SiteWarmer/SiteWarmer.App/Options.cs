@@ -1,12 +1,13 @@
-﻿using CommandLine;
+﻿using System.Collections.Generic;
+using CommandLine;
 using CommandLine.Text;
 
 namespace SiteWarmer.App
 {
 	public class Options
 	{
-		[Option('i', "input", Required = false, DefaultValue = "", HelpText = "This is the input file containing the urls to warm")]
-		public string Inputfile { get; set; }
+		[OptionList('i', "input", Required = false, Separator = ',', HelpText = "This is a comma seperated list of input files containing the urls to warm")]
+		public IList<string> Inputfiles { get; set; }
 
 		[Option('l', "logerror", Required = false, DefaultValue = false, HelpText = "If you wish to create a log file of all the non-passing checks")]
 		public bool LogError { get; set; }

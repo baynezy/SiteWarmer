@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using SiteWarmer.App.Factories;
 using SiteWarmer.Core.Config;
 
@@ -10,10 +11,8 @@ namespace SiteWarmer.App.Test.Factories
 		[Test]
 		public void Create_WhenConfigFileHasXmlExtension_ThenReturnXmlConfig()
 		{
-			var options = new Options
-				{
-					Inputfile = @"..\..\..\SiteWarmer.Core.Test\Data\urls.xml"
-				};
+			var files = new List<string> { @"..\..\..\SiteWarmer.Core.Test\Data\urls.xml" };
+			var options = new Options { Inputfiles = files };
 
 			var config = ConfigFactory.Create(options);
 
@@ -23,14 +22,31 @@ namespace SiteWarmer.App.Test.Factories
 		[Test]
 		public void Create_WhenConfigFileDoesNotHaveAnXmlExtension_ThenReturnFileConfig()
 		{
-			var options = new Options
-			{
-				Inputfile = @"..\..\..\SiteWarmer.Core.Test\Data\urls.txt"
-			};
+			var files = new List<string> { @"..\..\..\SiteWarmer.Core.Test\Data\urls.txt" };
+			var options = new Options { Inputfiles = files };
 
 			var config = ConfigFactory.Create(options);
 
 			Assert.That(config, Is.InstanceOf<FileConfig>());
+		}
+
+		[Test]
+		public void Create_WhenThereAreMultipleFiles_ThenCreateConfigCollection()
+		{
+			const int expectedCount = 2;
+			var files = new List<string>
+				{
+					@"..\..\..\SiteWarmer.Core.Test\Data\urls.txt",
+					@"..\..\..\SiteWarmer.Core.Test\Data\urls.xml"
+				};
+
+			var options = new Options { Inputfiles = files };
+
+			var config = ConfigFactory.Create(options) as ConfigCollection;
+
+			Assert.IsNotNull(config);
+
+			Assert.That(config.Size(), Is.EqualTo(expectedCount));
 		}
 	}
 }

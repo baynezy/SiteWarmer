@@ -1,4 +1,5 @@
-﻿using SiteWarmer.Core.Config;
+﻿using System.Linq;
+using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.App.Factories
 {
@@ -8,13 +9,41 @@ namespace SiteWarmer.App.Factories
 		{
 			IConfig config;
 
-			if (IsXmlFile(options.Inputfile))
+			if (HasMultipleFiles(options))
 			{
-				config = new XmlConfig(options.Inputfile);
+				var configCollection = new ConfigCollection();
+
+				foreach (var file in options.Inputfiles)
+				{
+					configCollection.Add(GetConfig(file));
+				}
+
+				config = configCollection;
 			}
 			else
 			{
-				config = new FileConfig(options.Inputfile);
+				config = GetConfig(options.Inputfiles.First());
+			}
+
+			return config;
+		}
+
+		private static bool HasMultipleFiles(Options options)
+		{
+			return options.Inputfiles.Count > 1;
+		}
+
+		private static IConfig GetConfig(string file)
+		{
+			IConfig config;
+			
+			if (IsXmlFile(file))
+			{
+				config = new XmlConfig(file);
+			}
+			else
+			{
+				config = new FileConfig(file);
 			}
 
 			return config;
