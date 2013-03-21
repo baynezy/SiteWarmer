@@ -7,7 +7,7 @@ namespace SiteWarmer.Core.Config
 {
 	public class XmlConfig : IConfig
 	{
-		private readonly List<Check> _checks;
+		private readonly IList<Check> _checks;
 		private readonly string _configPath;
 
 		public XmlConfig(string configPath)
@@ -65,7 +65,7 @@ namespace SiteWarmer.Core.Config
 			return matches;
 		}
 
-		public List<Check> Checks
+		public IList<Check> Checks
 		{
 			get { return _checks; }
 		}

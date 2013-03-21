@@ -11,6 +11,6 @@ namespace SiteWarmer.Core.Config
 		/// <summary>
 		/// The collection of Checks contained within the config
 		/// </summary>
-		List<Check> Checks { get; }
+		IList<Check> Checks { get; }
 	}
 }

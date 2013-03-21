@@ -1,30 +1,15 @@
 ﻿using System.Collections.Generic;
+using SiteWarmer.Core.Collection;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
 {
-	public class LoggerCollection : ILogger
+	public class LoggerCollection : AbstractCollection<ILogger>, ILogger
 	{
-		private readonly IList<ILogger> _loggers;
-
-		public LoggerCollection()
-		{
-			_loggers = new List<ILogger>();
-		}
-
-		public int Size()
-		{
-			return _loggers.Count;
-		}
-
-		public void Add(ILogger logger)
-		{
-			_loggers.Add(logger);
-		}
-
+		
 		public void Log(Check check)
 		{
-			foreach (var logger in _loggers)
+			foreach (var logger in Items)
 			{
 				logger.Log(check);
 			}
@@ -32,7 +17,7 @@ namespace SiteWarmer.Core.Logging
 
 		public void Close()
 		{
-			foreach (var logger in _loggers)
+			foreach (var logger in Items)
 			{
 				logger.Close();
 			}

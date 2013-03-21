@@ -43,7 +43,9 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Collection\AbstractCollection.cs" />
     <Compile Include="Config\Check.cs" />
+    <Compile Include="Config\ConfigCollection.cs" />
     <Compile Include="Config\ContentMatch.cs" />
     <Compile Include="Config\XmlConfig.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />

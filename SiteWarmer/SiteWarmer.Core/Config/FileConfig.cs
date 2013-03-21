@@ -5,7 +5,7 @@ namespace SiteWarmer.Core.Config
 {
 	public class FileConfig : IConfig
 	{
-		private readonly List<Check> _checks;
+		private readonly IList<Check> _checks;
 
 		public FileConfig(string configPath)
 		{
@@ -13,7 +13,7 @@ namespace SiteWarmer.Core.Config
 			Load(configPath);
 		}
 
-		public List<Check> Checks
+		public IList<Check> Checks
 		{
 			get { return _checks; }
 		}

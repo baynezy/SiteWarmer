@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\CheckTest.cs" />
+    <Compile Include="Config\ConfigCollectionTest.cs" />
     <Compile Include="Config\FileConfigTest.cs" />
     <Compile Include="Config\XmlConfigTest.cs" />
     <Compile Include="Logging\FileHelperTest.cs" />
