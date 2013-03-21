@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml;
 using CommandLine;
 using SiteWarmer.App.Factories;
@@ -11,6 +12,13 @@ namespace SiteWarmer.App
 		static void Main(string[] args)
 		{
 			var options = new Options();
+
+			if (HasNoArguments(args))
+			{
+				Console.Write(options.GetUsage());
+				Environment.Exit(1);
+			}
+
 			var parser = new Parser();
 
 			if (parser.ParseArguments(args, options))
@@ -43,6 +51,11 @@ namespace SiteWarmer.App
 			{
 				Environment.Exit(1);
 			}
+		}
+
+		private static bool HasNoArguments(ICollection<string> args)
+		{
+			return args.Count == 0;
 		}
 
 		private static bool ShouldShowVersion(Options options)
