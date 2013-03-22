@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>ilmerge</id>
-    <version>2.12.0803</version>
+    <version>2.13.0307</version>
     <title>ILMerge</title>
     <authors>mbarnett</authors>
     <owners>mbarnett</owners>
@@ -16,6 +16,7 @@ ILMerge is packaged as a console application. But all of its functionality is al
 There are several options that control the behavior of ILMerge. See the documentation that comes with the tool for details.</description>
     <summary>ILMerge is a static linker for .NET assemblies.</summary>
     <copyright>Microsoft Corporation</copyright>
+    <language>en-US</language>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />
       <frameworkAssembly assemblyName="System.Xml" targetFramework="" />

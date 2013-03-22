@@ -70,7 +70,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)..\..\SiteWarmer\packages\ilmerge.2.12.0803\ILMerge.exe /allowDup /wildcards /ndebug /targetplatform:v4 /target:exe /out:$(TargetDir)\output\SiteWarmer.exe $(TargetDir)*.exe $(TargetDir)*.dll</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)..\..\SiteWarmer\packages\ilmerge.2.13.0307\ILMerge.exe /allowDup /wildcards /ndebug /targetplatform:v4 /target:exe /out:$(TargetDir)\output\SiteWarmer.exe $(TargetDir)*.exe $(TargetDir)*.dll</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>rmdir $(TargetDir)\output /s /q
