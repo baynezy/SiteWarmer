@@ -24,23 +24,28 @@ namespace SiteWarmer.Core.Config
 		private void ParseXml(XContainer doc)
 		{
 			var checks = from check in doc.Elements("check")
+						 where check.Element("url") != null
 			             select new Check
 				             {
 					             Url = (string)check.Element("url"),
-								 ContentMatches = (from content in check.Elements("content") select new ContentMatch
-									 {
-										 Match = (string)content.Element("positive"),
-										 Required = true
-									 }).Union(from content in check.Elements("content") select new ContentMatch
-										 {
-											 Match = (string)content.Element("negative"),
-											 Required = false
-										 })
-										 .Where(m => m.Match != null)
-										 .ToList()
+								 ContentMatches = (from content in check.Elements("content")
+												   where content.Element("positive") != null
+												   select new ContentMatch
+													{
+														 Match = (string)content.Element("positive"),
+														 Required = true
+													})
+													.Union(from content in check.Elements("content")
+															  where content.Element("negative") != null
+															  select new ContentMatch
+													{
+														Match = (string)content.Element("negative"),
+														Required = false
+													})
+													.ToList()
 				             };
 
-			Checks = checks.Where(c => !string.IsNullOrEmpty(c.Url)).ToList();
+			Checks = checks.ToList();
 		}
 
 		public IList<Check> Checks { get; private set; }
