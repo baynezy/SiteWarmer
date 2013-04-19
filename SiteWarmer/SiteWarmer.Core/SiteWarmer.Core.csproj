@@ -47,6 +47,7 @@
     <Compile Include="Config\Check.cs" />
     <Compile Include="Config\ConfigCollection.cs" />
     <Compile Include="Config\ContentMatch.cs" />
+    <Compile Include="Config\ManualConfig.cs" />
     <Compile Include="Config\XmlConfig.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />
     <Compile Include="Config\FileConfig.cs" />
