@@ -52,6 +52,7 @@
     <Compile Include="Config\FileConfigTest.cs" />
     <Compile Include="Config\ManualConfigTest.cs" />
     <Compile Include="Config\XmlConfigTest.cs" />
+    <Compile Include="CustomWarmerTest.cs" />
     <Compile Include="Logging\FileHelperTest.cs" />
     <Compile Include="Logging\FileLoggerTest.cs" />
     <Compile Include="Logging\LoggerCollectionTest.cs" />

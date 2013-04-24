@@ -49,6 +49,7 @@
     <Compile Include="Config\ContentMatch.cs" />
     <Compile Include="Config\ManualConfig.cs" />
     <Compile Include="Config\XmlConfig.cs" />
+    <Compile Include="CustomWarmer.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />
     <Compile Include="Config\FileConfig.cs" />
     <Compile Include="Logging\FileHelper.cs" />
