@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using SiteWarmer.Core.Comms;
 using SiteWarmer.Core.Config;
 using SiteWarmer.Core.Logging;
@@ -12,13 +11,13 @@ namespace SiteWarmer.Core
 	public class Warmer
 	{
 		private readonly IConfig _config;
-		private readonly IRequester _requester;
+		private readonly CustomWarmer _warmer;
 		private readonly ILogger _logger;
 
 		public Warmer(IConfig config, IRequester requester, ILogger logger)
 		{
 			_config = config;
-			_requester = requester;
+			_warmer = new CustomWarmer(config, requester);
 			_logger = logger;
 		}
 
@@ -35,11 +34,7 @@ namespace SiteWarmer.Core
 
 		protected virtual bool RunChecks(IList<Check> checks)
 		{
-			Parallel.ForEach(checks, check =>
-			{
-				_requester.Check(check);
-				_logger.Log(check);
-			});
+			_warmer.Warm(_logger.Log);
 
 			return true;
 		}
