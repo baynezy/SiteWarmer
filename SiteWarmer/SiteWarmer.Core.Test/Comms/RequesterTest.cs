@@ -26,16 +26,6 @@ namespace SiteWarmer.Core.Test.Comms
 		}
 
 		[Test]
-        public void Check_CallsErroringPage_Returns500StatusCode()
-		{
-			var check = new Check { Url = "http://www.simonbaynes.com/_errors/error.cfm" };
-
-			_requester.Check(check);
-
-			Assert.That(check.Status, Is.EqualTo(500));
-		}
-
-		[Test]
         public void Check_CallsMissingPage_Returns404StatusCode()
 		{
 			var check = new Check { Url = "http://www.simonbaynes.com/404/" };
