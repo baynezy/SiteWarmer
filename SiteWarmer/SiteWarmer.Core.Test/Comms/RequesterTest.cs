@@ -18,7 +18,7 @@ namespace SiteWarmer.Core.Test.Comms
 		[Test]
 		public void Check_CallsExistingPage_Returns200StatusCode()
 		{
-			var check = new Check { Url = "http://www.simonbaynes.com/home/" };
+			var check = new Check { Url = "http://httpstat.us/200" };
 
 			_requester.Check(check);
 
@@ -26,9 +26,9 @@ namespace SiteWarmer.Core.Test.Comms
 		}
 
 		[Test]
-        public void Check_CallsErroringPage_Returns500StatusCode()
+		public void Check_CallsErroringPage_Returns500StatusCode()
 		{
-			var check = new Check { Url = "http://www.simonbaynes.com/_errors/error.cfm" };
+			var check = new Check { Url = "http://httpstat.us/500" };
 
 			_requester.Check(check);
 
@@ -36,9 +36,9 @@ namespace SiteWarmer.Core.Test.Comms
 		}
 
 		[Test]
-        public void Check_CallsMissingPage_Returns404StatusCode()
+		public void Check_CallsMissingPage_Returns404StatusCode()
 		{
-			var check = new Check { Url = "http://www.simonbaynes.com/404/" };
+			var check = new Check { Url = "http://httpstat.us/404" };
 
 			_requester.Check(check);
 
@@ -48,11 +48,11 @@ namespace SiteWarmer.Core.Test.Comms
 		[Test]
 		public void Check_CallsExistingPage_ReturnsCorrectContent()
 		{
-			var check = new Check { Url = "http://www.github.com/" };
+			var check = new Check { Url = "http://httpstat.us/200" };
 
 			_requester.Check(check);
 
-			AssertContainsString("<title>GitHub · Build software better, together.</title>", check.Source);
+			AssertContainsString("200 OK", check.Source);
 		}
 
 		private static void AssertContainsString(string expected, string actual)
