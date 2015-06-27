@@ -2,7 +2,8 @@
 
 Allows you to hit your sites after a deployment to make sure they are running.
 
-[![NuGet version](https://badge.fury.io/nu/SiteWarmer.Core.svg)](http://badge.fury.io/nu/SiteWarmer.Core) 
+[![NuGet version](https://badge.fury.io/nu/SiteWarmer.Core.svg)](http://badge.fury.io/nu/SiteWarmer.Core) ![Build Status](https://ci.appveyor.com/api/projects/status/y46qd4btxsnklicp?svg=true) 
+
 
 ## Installing via NuGet
 
