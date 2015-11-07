@@ -49,7 +49,7 @@ namespace SiteWarmer.Core.Config
 			return Status == Ok && CheckContent();
 		}
 
-		private bool CheckContent()
+		public bool CheckContent()
 		{
 			var passed = true;
 			

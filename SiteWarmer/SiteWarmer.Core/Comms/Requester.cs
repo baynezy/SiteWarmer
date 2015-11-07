@@ -15,6 +15,7 @@ namespace SiteWarmer.Core.Comms
 		{
 			var request = (HttpWebRequest) WebRequest.Create(check.Url);
 			request.Timeout = 10000;
+			request.KeepAlive = false;
 			HttpWebResponse response = null;
 			try
 			{
