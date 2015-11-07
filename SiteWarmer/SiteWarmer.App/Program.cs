@@ -7,9 +7,9 @@ using SiteWarmer.Core.Comms;
 
 namespace SiteWarmer.App
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			var options = new Options();
 
