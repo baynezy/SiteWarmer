@@ -23,7 +23,7 @@ namespace SiteWarmer.App
         {
             var help = new HelpText
                 {
-                    Heading = new HeadingInfo("Site Warmer", "3.0.0"),
+                    Heading = new HeadingInfo("Site Warmer", "5.0.0"),
                     Copyright = new CopyrightInfo("Simon Baynes", 2013),
                     AdditionalNewLineAfterOption = true,
                     AddDashesToOption = true
