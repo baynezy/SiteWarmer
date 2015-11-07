@@ -6,13 +6,14 @@ namespace SiteWarmer.App.Test
 	class ProgramTest
 	{
 		[Test]
-		public void Main_WhenPassingOnlyLoggingArgument_ThenShouldNotThrowException()
+		public void Main_WhenPassingMinimumArgsForLogging_ThenShouldNotThrowException()
 		{
 			var args = new[]
 					{
-						"-l"
+						"-i",
+						@"..\..\..\SiteWarmer.Core.Test\Data\urls.txt"
 					};
-			AssertThatProgramNotFailing(args, "When only passing in -l there should not be an error.");
+			AssertThatProgramNotFailing(args, "When only passing in -i there should not be an error.");
 		}
 
 		[Test]
@@ -31,9 +32,9 @@ namespace SiteWarmer.App.Test
 			{
 				Program.Main(args);
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
-				Assert.Fail(message);
+				Assert.Fail("{0} - Cause: {1}", message, e.Message);
 			}
 		}
 	}

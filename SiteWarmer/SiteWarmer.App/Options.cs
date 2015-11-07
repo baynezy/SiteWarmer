@@ -6,16 +6,16 @@ namespace SiteWarmer.App
 {
 	public class Options
 	{
-		[OptionList('i', "input", Required = false, Separator = ',', HelpText = "This is a comma seperated list of input files containing the urls to warm", MutuallyExclusiveSet = "warming")]
+		[OptionList('i', "input", Required = false, Separator = ',', HelpText = "This is a comma seperated list of input files containing the urls to warm")]
 		public IList<string> Inputfiles { get; set; }
 
-		[Option('l', "logerror", Required = false, DefaultValue = false, HelpText = "If you wish to create a log file of all the non-passing checks", MutuallyExclusiveSet = "warming")]
+		[Option('l', "logerror", Required = false, DefaultValue = false, HelpText = "If you wish to create a log file of all the non-passing checks")]
 		public bool LogError { get; set; }
 
-		[Option('r', "retries", Required = false, DefaultValue = 0, HelpText = "The number of times to retry non-successful http calls", MutuallyExclusiveSet = "warming")]
+		[Option('r', "retries", Required = false, DefaultValue = 0, HelpText = "The number of times to retry non-successful http calls")]
 		public int Retries { get; set; }
 
-		[Option('v', "version", Required = false, DefaultValue = false, HelpText = "Outputs the product version number.", MutuallyExclusiveSet = "version")]
+		[Option('v', "version", Required = false, DefaultValue = false, HelpText = "Outputs the product version number.")]
 		public bool Version { get; set; }
 
         [HelpOption]
