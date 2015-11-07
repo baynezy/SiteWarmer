@@ -43,8 +43,6 @@ namespace SiteWarmer.Core.Test
             
             warmer.Warm();
 
-            config.Verify(f => f.Checks, Times.Once());
-
             requester.Verify(f => f.Check(It.IsAny<Check>()), Times.Exactly(4));
 
             logger.Verify(f => f.Log(It.IsAny<Check>()), Times.Exactly(4));
