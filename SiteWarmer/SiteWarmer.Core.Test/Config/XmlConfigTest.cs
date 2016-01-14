@@ -74,10 +74,10 @@ namespace SiteWarmer.Core.Test.Config
 			Assert.That(checks[0].ContentMatches.Count, Is.EqualTo(expectedNumberOfMatches));
 		}
 
-		[Test]
+		[Test, ExpectedException(typeof(XmlException))]
 		public void XmlConfig_WhenTheXmlIsInvalid_ThenThrowXmlException()
 		{
-			Assert.Throws<XmlException>(() => new XmlConfig(@"..\..\Data\invalid.xml"));
+			new XmlConfig(@"..\..\Data\invalid.xml");
 		}
 	}
 }
