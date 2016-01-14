@@ -2,10 +2,22 @@
 
 Allows you to hit your sites after a deployment to make sure they are running.
 
-[![NuGet version](https://badge.fury.io/nu/SiteWarmer.Core.svg)](http://badge.fury.io/nu/SiteWarmer.Core) [![Build Status](https://ci.appveyor.com/api/projects/status/y46qd4btxsnklicp?svg=true)](https://ci.appveyor.com/project/baynezy/sitewarmer)
+## Build Status
 
+<table>
+    <tr>
+        <th>master</th>
+		<td><a href="https://ci.appveyor.com/project/baynezy/sitewarmer"><img src="https://ci.appveyor.com/api/projects/status/y46qd4btxsnklicp/branch/master?svg=true" alt="master" title="master" /></a></td>
+    </tr>
+    <tr>
+        <th>develop</th>
+		<td><a href="https://ci.appveyor.com/project/baynezy/sitewarmer"><img src="https://ci.appveyor.com/api/projects/status/y46qd4btxsnklicp/branch/develop?svg=true" alt="develop" title="develop" /></a></td>
+    </tr>
+</table>
 
 ## Installing via NuGet
+
+[![NuGet version](https://badge.fury.io/nu/SiteWarmer.Core.svg)](http://badge.fury.io/nu/SiteWarmer.Core)
 
     Install-Package SiteWarmer.Core
 
