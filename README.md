@@ -2,6 +2,8 @@
 
 Allows you to hit your sites after a deployment to make sure they are running.
 
+[![Stories in Ready](https://badge.waffle.io/baynezy/SiteWarmer.svg?label=ready&title=Stories%20in%20Ready)](http://waffle.io/baynezy/SiteWarmer)
+
 ## Build Status
 
 <table>
