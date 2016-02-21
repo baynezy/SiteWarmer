@@ -8,10 +8,23 @@ namespace SiteWarmer.App.Test.Factories
 	[TestFixture]
 	class ConfigFactoryTest
 	{
+		private string _testPath;
+
+		[SetUp]
+		public void SetUp()
+		{
+			_testPath = TestPath();
+		}
+
+		private static string TestPath()
+		{
+			return System.Environment.GetEnvironmentVariable("Test.Path") ?? @"..\..\..\";
+		}
+
 		[Test]
 		public void Create_WhenConfigFileHasXmlExtension_ThenReturnXmlConfig()
 		{
-			var files = new List<string> { @"..\..\..\SiteWarmer.Core.Test\Data\urls.xml" };
+			var files = new List<string> { _testPath + @"SiteWarmer.Core.Test\Data\urls.xml" };
 			var options = new Options { Inputfiles = files };
 
 			var config = ConfigFactory.Create(options);
@@ -22,7 +35,7 @@ namespace SiteWarmer.App.Test.Factories
 		[Test]
 		public void Create_WhenConfigFileDoesNotHaveAnXmlExtension_ThenReturnFileConfig()
 		{
-			var files = new List<string> { @"..\..\..\SiteWarmer.Core.Test\Data\urls.txt" };
+			var files = new List<string> { _testPath + @"SiteWarmer.Core.Test\Data\urls.txt" };
 			var options = new Options { Inputfiles = files };
 
 			var config = ConfigFactory.Create(options);
@@ -36,8 +49,8 @@ namespace SiteWarmer.App.Test.Factories
 			const int expectedCount = 2;
 			var files = new List<string>
 				{
-					@"..\..\..\SiteWarmer.Core.Test\Data\urls.txt",
-					@"..\..\..\SiteWarmer.Core.Test\Data\urls.xml"
+					_testPath + @"SiteWarmer.Core.Test\Data\urls.txt",
+					_testPath + @"SiteWarmer.Core.Test\Data\urls.xml"
 				};
 
 			var options = new Options { Inputfiles = files };

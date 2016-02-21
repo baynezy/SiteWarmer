@@ -9,10 +9,23 @@ namespace SiteWarmer.Core.Test.Config
 	[TestFixture]
 	class XmlConfigTest
 	{
+		private string _testPath;
+
+		[SetUp]
+		public void SetUp()
+		{
+			_testPath = TestPath();
+		}
+
+		private static string TestPath()
+		{
+			return System.Environment.GetEnvironmentVariable("Test.Path") ?? @"..\..\..\";
+		}
+
 		[Test]
 		public void XmlConfig_ImplementsIConfig()
 		{
-			var config = new XmlConfig(@"..\..\Data\urls.xml");
+			var config = new XmlConfig(_testPath + @"SiteWarmer.Core.Test\Data\urls.xml");
 
 			Assert.That(config, Is.InstanceOf<IConfig>());
 		}
@@ -23,16 +36,14 @@ namespace SiteWarmer.Core.Test.Config
 			const int expectedNumberOfChecks = 4;
 			const int expectedNumberOfNegativeContentMatches = 1;
 			const int expectedNumberOfPositiveContentMatches = 1;
-			var config = new XmlConfig(@"..\..\Data\urls.xml");
+			var config = new XmlConfig(_testPath + @"SiteWarmer.Core.Test\Data\urls.xml");
 
 			var checks = config.Checks;
-
-			IList<ContentMatch> matches;
 
 			Assert.That(checks.Count, Is.EqualTo(expectedNumberOfChecks));
 
 			Assert.That(checks[0].Url, Is.EqualTo("http://www.yahoo.com/"));
-			matches = checks[0].ContentMatches;
+			var matches = checks[0].ContentMatches;
 			Assert.That(matches.Count(m => m.Required), Is.EqualTo(expectedNumberOfPositiveContentMatches));
 			Assert.That(matches.Count(m => !m.Required), Is.EqualTo(expectedNumberOfNegativeContentMatches));
 
@@ -56,7 +67,7 @@ namespace SiteWarmer.Core.Test.Config
 		public void Checks_ReadingInEmptyFile_ReturnsEmptyListOfChecks()
 		{
 			const int expectedNumberOfChecks = 0;
-			var config = new XmlConfig(@"..\..\Data\empty.xml");
+			var config = new XmlConfig(_testPath + @"SiteWarmer.Core.Test\Data\empty.xml");
 
 			var checks = config.Checks;
 
@@ -67,7 +78,7 @@ namespace SiteWarmer.Core.Test.Config
 		public void Checks_ReadingInFileWithEmptyMatches_ReturnsEmptyListOfMatches()
 		{
 			const int expectedNumberOfMatches = 0;
-			var config = new XmlConfig(@"..\..\Data\empty_items.xml");
+			var config = new XmlConfig(_testPath + @"SiteWarmer.Core.Test\Data\empty_items.xml");
 
 			var checks = config.Checks;
 
@@ -77,7 +88,7 @@ namespace SiteWarmer.Core.Test.Config
 		[Test]
 		public void XmlConfig_WhenTheXmlIsInvalid_ThenThrowXmlException()
 		{
-			Assert.Throws<XmlException>(() => new XmlConfig(@"..\..\Data\invalid.xml"));
+			Assert.Throws<XmlException>(() => new XmlConfig(_testPath + @"SiteWarmer.Core.Test\Data\invalid.xml"));
 		}
 	}
 }

@@ -7,11 +7,18 @@ namespace SiteWarmer.Core.Test.Config
 	class FileConfigTest
 	{
 		private IConfig _config;
+		private string _testPath;
 
 		[SetUp]
 		public void SetUp()
 		{
-			_config = new FileConfig(@"..\..\Data\urls.txt");
+			_testPath = TestPath();
+			_config = new FileConfig(_testPath + @"SiteWarmer.Core.Test\Data\urls.txt");
+		}
+
+		private static string TestPath()
+		{
+			return System.Environment.GetEnvironmentVariable("Test.Path") ?? @"..\..\..\";
 		}
 
 		[Test]

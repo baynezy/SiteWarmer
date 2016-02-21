@@ -5,13 +5,26 @@ namespace SiteWarmer.App.Test
 	[TestFixture]
 	class ProgramTest
 	{
+		private string _testPath;
+
+		[SetUp]
+		public void SetUp()
+		{
+			_testPath = TestPath();
+		}
+
+		private static string TestPath()
+		{
+			return Environment.GetEnvironmentVariable("Test.Path") ?? @"..\..\..\";
+		}
+
 		[Test]
 		public void Main_WhenPassingMinimumArgsForLogging_ThenShouldNotThrowException()
 		{
 			var args = new[]
 					{
 						"-i",
-						@"..\..\..\SiteWarmer.Core.Test\Data\urls.txt"
+						_testPath + @"SiteWarmer.Core.Test\Data\urls.txt"
 					};
 			AssertThatProgramNotFailing(args, "When only passing in -i there should not be an error.");
 		}
