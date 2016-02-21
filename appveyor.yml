@@ -4,7 +4,7 @@ build:
   publish_nuget: true
   verbosity: minimal
 environment:
-  Test.Path: C:\projects\sitewarmer\sitewarmer\test\
+  Test.Path: C:\projects\sitewarmer\SiteWarmer\
 deploy:
 - provider: NuGet
   api_key:
