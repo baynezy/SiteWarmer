@@ -12,6 +12,10 @@ namespace SiteWarmer.Core.Logging
 		/// </summary>
 		/// <param name="check">The Check we are logging</param>
 		void Log(Check check);
+
+		/// <summary>
+		/// Close logger
+		/// </summary>
 		void Close();
 	}
 }

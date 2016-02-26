@@ -4,6 +4,9 @@ using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
 {
+	/// <summary>
+	/// Log Checks out to a file 
+	/// </summary>
 	public class FileLogger : ILogger
 	{
 		private static IList<Check> _checks;
@@ -11,6 +14,10 @@ namespace SiteWarmer.Core.Logging
 		private readonly IFileHelper _helper;
 		private const string LogFile = "error.log";
 
+		/// <summary>
+		/// Instantiate new Filelogger
+		/// </summary>
+		/// <param name="helper">File helper</param>
 		public FileLogger(IFileHelper helper)
 		{
 			_checks = new List<Check>();

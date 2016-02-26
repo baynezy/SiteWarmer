@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
-using SiteWarmer.Core.Collection;
+﻿using SiteWarmer.Core.Collection;
 using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
 {
+	/// <summary>
+	/// Combine multiple ILogger implementations into a composite ILogger
+	/// </summary>
 	public class LoggerCollection : AbstractCollection<ILogger>, ILogger
 	{
 		
