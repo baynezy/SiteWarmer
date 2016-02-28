@@ -11,3 +11,5 @@ deploy:
     secure: mqfd5QXj3a2N+D2EP9avxupQJRBJFEKT9kjF7Tipl1OCkUvPBsKjfiZMQHpnwVKq
   on:
     branch: master
+install:
+  - choco install doxygen.portable
