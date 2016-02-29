@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['iconfig_2ecs',['IConfig.cs',['../_i_config_8cs.html',1,'']]],
-  ['ifilehelper_2ecs',['IFileHelper.cs',['../_i_file_helper_8cs.html',1,'']]],
-  ['ilogger_2ecs',['ILogger.cs',['../_i_logger_8cs.html',1,'']]],
-  ['irequester_2ecs',['IRequester.cs',['../_i_requester_8cs.html',1,'']]]
+  ['fileconfig_2ecs',['FileConfig.cs',['../_file_config_8cs.html',1,'']]],
+  ['filehelper_2ecs',['FileHelper.cs',['../_file_helper_8cs.html',1,'']]],
+  ['filelogger_2ecs',['FileLogger.cs',['../_file_logger_8cs.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['manualconfig_2ecs',['ManualConfig.cs',['../_manual_config_8cs.html',1,'']]]
+  ['loggercollection_2ecs',['LoggerCollection.cs',['../_logger_collection_8cs.html',1,'']]]
 ];

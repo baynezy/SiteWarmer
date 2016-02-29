@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['xmlconfig',['XmlConfig',['../class_site_warmer_1_1_core_1_1_config_1_1_xml_config.html',1,'SiteWarmer::Core::Config']]],
-  ['xmlconfig',['XmlConfig',['../class_site_warmer_1_1_core_1_1_config_1_1_xml_config.html#aeec0a22d13ed326c4c4b29608c3d1bc3',1,'SiteWarmer::Core::Config::XmlConfig']]],
-  ['xmlconfig_2ecs',['XmlConfig.cs',['../_xml_config_8cs.html',1,'']]]
+  ['warm',['Warm',['../class_site_warmer_1_1_core_1_1_custom_warmer.html#a80245a9480b170f490867399a61eeb9a',1,'SiteWarmer.Core.CustomWarmer.Warm()'],['../class_site_warmer_1_1_core_1_1_warmer.html#a1f75c5dd610323bbd8aaead60f145f17',1,'SiteWarmer.Core.Warmer.Warm()']]],
+  ['warmer',['Warmer',['../class_site_warmer_1_1_core_1_1_warmer.html#aeffbdbd46063f6351e649e0c5971fa70',1,'SiteWarmer::Core::Warmer']]],
+  ['warmer',['Warmer',['../class_site_warmer_1_1_core_1_1_warmer.html',1,'SiteWarmer::Core']]],
+  ['warmer_2ecs',['Warmer.cs',['../_warmer_8cs.html',1,'']]],
+  ['writeline',['WriteLine',['../class_site_warmer_1_1_core_1_1_logging_1_1_file_helper.html#a1612c9a59564b419adcbff328928ba8e',1,'SiteWarmer.Core.Logging.FileHelper.WriteLine()'],['../interface_site_warmer_1_1_core_1_1_logging_1_1_i_file_helper.html#a763e4dd374f85336b351c4ee3575af08',1,'SiteWarmer.Core.Logging.IFileHelper.WriteLine()']]]
 ];
