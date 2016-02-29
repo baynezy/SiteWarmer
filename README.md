@@ -17,6 +17,9 @@ Allows you to hit your sites after a deployment to make sure they are running.
     </tr>
 </table>
 
+## Documentation
+Fully navigable documentation available on [GitHub Pages](http://baynezy.github.io/SiteWarmer/)
+
 ## Installing via NuGet
 
 [![NuGet version](https://badge.fury.io/nu/SiteWarmer.Core.svg)](http://badge.fury.io/nu/SiteWarmer.Core)
