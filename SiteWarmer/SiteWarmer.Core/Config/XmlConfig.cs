@@ -4,10 +4,17 @@ using System.Xml.Linq;
 
 namespace SiteWarmer.Core.Config
 {
+	/// <summary>
+	/// Create a configuration from an XML file
+	/// </summary>
 	public class XmlConfig : IConfig
 	{
 		private readonly string _configPath;
 
+		/// <summary>
+		/// Create a new configuration
+		/// </summary>
+		/// <param name="configPath">Path to XML file containing config</param>
 		public XmlConfig(string configPath)
 		{
 			_configPath = configPath;
@@ -48,6 +55,9 @@ namespace SiteWarmer.Core.Config
 			Checks = checks.ToList();
 		}
 
+		/// <summary>
+		/// The collection of Checks contained within the config
+		/// </summary>
 		public IList<Check> Checks { get; private set; }
 	}
 }
