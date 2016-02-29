@@ -35,3 +35,6 @@ if($currentBranch -eq 'master') {
 		Write-Host "- No changes to documentation to commit"
 	}
 }
+else {
+	Write-Host "- Not pushing documentation as '" + $currentBranch + "' does not match 'master'"
+}
