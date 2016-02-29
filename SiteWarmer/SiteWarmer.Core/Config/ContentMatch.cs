@@ -1,5 +1,8 @@
 ﻿namespace SiteWarmer.Core.Config
 {
+	/// <summary>
+	/// Content we are looking to find or not find in the pages being requested
+	/// </summary>
 	public class ContentMatch
 	{
 		/// <summary>

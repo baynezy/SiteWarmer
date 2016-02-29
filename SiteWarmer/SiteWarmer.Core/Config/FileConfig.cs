@@ -3,16 +3,26 @@ using System.IO;
 
 namespace SiteWarmer.Core.Config
 {
+	/// <summary>
+	/// Configuration contained in a file
+	/// </summary>
 	public class FileConfig : IConfig
 	{
 		private readonly IList<Check> _checks;
 
+		/// <summary>
+		/// Creates a new configuration from a file
+		/// </summary>
+		/// <param name="configPath">The path to the configuration file</param>
 		public FileConfig(string configPath)
 		{
 			_checks = new List<Check>();
 			Load(configPath);
 		}
 
+		/// <summary>
+		/// The collection of Checks contained within the config
+		/// </summary>
 		public IList<Check> Checks
 		{
 			get { return _checks; }

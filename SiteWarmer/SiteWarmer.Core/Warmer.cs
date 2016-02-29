@@ -14,6 +14,12 @@ namespace SiteWarmer.Core
 		private readonly CustomWarmer _warmer;
 		private readonly ILogger _logger;
 
+		/// <summary>
+		/// Instantiate new Warmer
+		/// </summary>
+		/// <param name="config">Configuraton of Check</param>
+		/// <param name="requester">HTTP requester</param>
+		/// <param name="logger">Logging strategy for Warmer</param>
 		public Warmer(IConfig config, IRequester requester, ILogger logger)
 		{
 			_config = config;
@@ -21,6 +27,10 @@ namespace SiteWarmer.Core
 			_logger = logger;
 		}
 
+		/// <summary>
+		/// Warm URLs from IConfig
+		/// </summary>
+		/// <returns>Final status of Check collection on completion</returns>
 		public IList<Check> Warm()
 		{
 			var checks = _config.Checks;
@@ -32,6 +42,11 @@ namespace SiteWarmer.Core
 			return checks;
 		}
 
+		/// <summary>
+		/// Specific action when Check collections are requested
+		/// </summary>
+		/// <param name="checks">Collection of Check to run</param>
+		/// <returns>Looks like a bug</returns>
 		protected virtual bool RunChecks(IList<Check> checks)
 		{
 			_warmer.Warm(_logger.Log);
