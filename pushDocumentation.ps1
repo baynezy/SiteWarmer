@@ -36,5 +36,5 @@ if($currentBranch -eq 'master') {
 	}
 }
 else {
-	Write-Host "- Not pushing documentation as '" + $currentBranch + "' does not match 'master'"
+	Write-Host "- Not pushing documentation as '$currentBranch' does not match 'master'"
 }
