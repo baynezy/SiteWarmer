@@ -46,7 +46,7 @@ namespace SiteWarmer.Core
 		/// Specific action when Check collections are requested
 		/// </summary>
 		/// <param name="checks">Collection of Check to run</param>
-		/// <returns>Looks like a bug</returns>
+		/// <returns>Whether all checks have completed</returns>
 		protected virtual bool RunChecks(IList<Check> checks)
 		{
 			_warmer.Warm(_logger.Log);
