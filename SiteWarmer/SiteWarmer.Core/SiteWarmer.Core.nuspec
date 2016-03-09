@@ -7,7 +7,8 @@
     <authors>Simon Baynes</authors>
     <owners>Simon Baynes</owners>
     <projectUrl>https://github.com/baynezy/SiteWarmer</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>This is a library of tools for checking that your sites have restarted after a deployment.</description>
     <!--
 	<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
