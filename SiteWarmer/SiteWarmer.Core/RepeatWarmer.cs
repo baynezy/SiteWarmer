@@ -14,6 +14,13 @@ namespace SiteWarmer.Core
 		private readonly int _timesToRepeat;
 		private int _numberOfRuns;
 
+		/// <summary>
+		/// Instantiate new RepeatWarmer
+		/// </summary>
+		/// <param name="config">Configuraton of Check</param>
+		/// <param name="requester">HTTP requester</param>
+		/// <param name="logger">Logging strategy for Warmer</param>
+		/// <param name="timesToRepeat">How many times the Warmer will retry on a failure</param>
 		public RepeatWarmer(IConfig config, IRequester requester, ILogger logger, int timesToRepeat) : base(config, requester, logger)
 		{
 			_timesToRepeat = timesToRepeat;

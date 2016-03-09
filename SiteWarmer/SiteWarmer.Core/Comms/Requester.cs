@@ -4,6 +4,9 @@ using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Comms
 {
+	/// <summary>
+	/// Makes HTTP requests to URLs to see if they are responding correctly.
+	/// </summary>
 	public class Requester : IRequester
 	{
 		public void Check(Check check)

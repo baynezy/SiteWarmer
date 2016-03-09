@@ -2,6 +2,9 @@
 
 namespace SiteWarmer.Core.Logging
 {
+	/// <summary>
+	/// Utility class for working with text files
+	/// </summary>
 	public class FileHelper : IFileHelper
 	{
 		public void WriteLine(string fileName, string text)

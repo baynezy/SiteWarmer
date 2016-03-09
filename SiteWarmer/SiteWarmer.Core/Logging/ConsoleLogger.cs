@@ -3,6 +3,9 @@ using SiteWarmer.Core.Config;
 
 namespace SiteWarmer.Core.Logging
 {
+	/// <summary>
+	/// Log Checks out to the console
+	/// </summary>
 	public class ConsoleLogger : ILogger
 	{
 		private static ConsoleColor _originalTextColour;
@@ -11,6 +14,9 @@ namespace SiteWarmer.Core.Logging
 		private const ConsoleColor ContentFailTextColour = ConsoleColor.DarkYellow;
 		private const ConsoleColor SuccessTextColour = ConsoleColor.Green;
 
+		/// <summary>
+		/// Instantiate a new ConsoleLogger
+		/// </summary>
 		public ConsoleLogger()
 		{
 			_originalTextColour = Console.ForegroundColor;
@@ -34,6 +40,11 @@ namespace SiteWarmer.Core.Logging
 			{
 				WriteFail(check, passed);
 			}
+		}
+
+		public void Close()
+		{
+			// no need to do anything here
 		}
 
 		private static void WritePass(Check check, string passed)
@@ -65,11 +76,6 @@ namespace SiteWarmer.Core.Logging
 		private static void WriteToConsole(Check check, string passed)
 		{
 			Console.WriteLine("{0}: {1} - {2}", check.Status, check.Url, passed);
-		}
-
-		public void Close()
-		{
-			// no need to do anything here
 		}
 	}
 }
