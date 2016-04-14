@@ -3,21 +3,8 @@ using NUnit.Framework;
 namespace SiteWarmer.App.Test
 {
 	[TestFixture]
-	class ProgramTest
+	class ProgramTest : BaseTest
 	{
-		private string _testPath;
-
-		[SetUp]
-		public void SetUp()
-		{
-			_testPath = TestPath();
-		}
-
-		private static string TestPath()
-		{
-			return Environment.GetEnvironmentVariable("Test.Path") ?? @"..\..\..\";
-		}
-
 		[Test]
 		public void Main_WhenPassingMinimumArgsForLogging_ThenShouldNotThrowException()
 		{

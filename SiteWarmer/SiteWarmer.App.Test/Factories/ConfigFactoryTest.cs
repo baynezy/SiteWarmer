@@ -6,21 +6,8 @@ using SiteWarmer.Core.Config;
 namespace SiteWarmer.App.Test.Factories
 {
 	[TestFixture]
-	class ConfigFactoryTest
+	class ConfigFactoryTest : BaseTest
 	{
-		private string _testPath;
-
-		[SetUp]
-		public void SetUp()
-		{
-			_testPath = TestPath();
-		}
-
-		private static string TestPath()
-		{
-			return System.Environment.GetEnvironmentVariable("Test.Path") ?? @"..\..\..\";
-		}
-
 		[Test]
 		public void Create_WhenConfigFileHasXmlExtension_ThenReturnXmlConfig()
 		{
