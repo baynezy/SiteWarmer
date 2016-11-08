@@ -54,6 +54,38 @@ namespace SiteWarmer.Core.Test
 			Assert.AreNotEqual(Check.Ok, results[0].Status);
 		}
 
+		[Test]
+		public void Warm_WhenCallPasses_ThenDoNotRetryUrl()
+		{
+			var config = new Mock<IConfig>();
+			config.Setup(m => m.Checks).Returns(new List<Check>
+				{
+					new Check
+						{
+							Url = "http://www.google.com"
+						},
+					new Check
+						{
+							Url = "http://www.google.co.uk"
+						}
+				});
+
+			var requester = new Mock<IRequester>();
+			requester.Setup(m => m.Check(It.IsAny<Check>()))
+			         .Callback((Check c) =>
+				         {
+					         c.Status = c.Url.Equals("http://www.google.com") ? 500 : Check.Ok;
+				         });
+
+			var logger = BaseLogger();
+
+			var warmer = new RepeatWarmer(config.Object, requester.Object, logger.Object, 2);
+
+			warmer.Warm();
+
+			requester.Verify(f => f.Check(It.IsAny<Check>()), Times.Exactly(3));
+		}
+
 		private static Mock<IConfig> BaseConfig()
 		{
 			var config = new Mock<IConfig>();
