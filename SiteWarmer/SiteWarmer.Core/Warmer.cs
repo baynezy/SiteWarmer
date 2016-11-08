@@ -49,7 +49,7 @@ namespace SiteWarmer.Core
 		/// <returns>Whether all checks have completed</returns>
 		protected virtual bool RunChecks(IList<Check> checks)
 		{
-			_warmer.Warm(_logger.Log);
+			_warmer.Warm(checks, _logger.Log);
 
 			return true;
 		}
