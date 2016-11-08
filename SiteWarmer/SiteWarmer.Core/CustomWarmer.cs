@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SiteWarmer.Core.Comms;
 using SiteWarmer.Core.Config;
@@ -30,11 +31,21 @@ namespace SiteWarmer.Core
 		/// <param name="action">Custom action to execute after each Check is requested</param>
 		public void Warm(Action<Check> action)
 		{
-			Parallel.ForEach(_config.Checks, check =>
-				{
-					_requester.Check(check);
-					action.Invoke(check);
-				});
+			Warm(_config.Checks, action);
+		}
+
+		/// <summary>
+		/// Warm all URLs in the Check collection passed in
+		/// </summary>
+		/// <param name="checks">Check collection to warm</param>
+		/// <param name="action">Custom action to execute after each Check is requested</param>
+		public void Warm(IList<Check> checks, Action<Check> action)
+		{
+			Parallel.ForEach(checks, check =>
+			{
+				_requester.Check(check);
+				action.Invoke(check);
+			});
 		}
 	}
 }
