@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml;
 using CommandLine;
 using SiteWarmer.App.Factories;
@@ -43,6 +44,13 @@ namespace SiteWarmer.App
 				{
 					Console.WriteLine("");
 					Console.WriteLine("Invalid XML Config File");
+					Console.WriteLine("-----------------------");
+					Console.WriteLine(e.Message);
+				}
+				catch (FileNotFoundException e)
+				{
+					Console.WriteLine("");
+					Console.WriteLine("Could not find the file specifed. {0}", options.Inputfiles);
 					Console.WriteLine("-----------------------");
 					Console.WriteLine(e.Message);
 				}
