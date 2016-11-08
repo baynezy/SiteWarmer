@@ -6,7 +6,8 @@ var indexSectionsWithContent =
   3: "acdfilmrwx",
   4: "acflmprswx",
   5: "io",
-  6: "cmrsu"
+  6: "cmrsu",
+  7: "s"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "properties"
+  6: "properties",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Files",
   4: "Functions",
   5: "Variables",
-  6: "Properties"
+  6: "Properties",
+  7: "Pages"
 };
 

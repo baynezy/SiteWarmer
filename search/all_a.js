@@ -4,6 +4,7 @@ var searchData=
   ['comms',['Comms',['../namespace_site_warmer_1_1_core_1_1_comms.html',1,'SiteWarmer::Core']]],
   ['config',['Config',['../namespace_site_warmer_1_1_core_1_1_config.html',1,'SiteWarmer::Core']]],
   ['core',['Core',['../namespace_site_warmer_1_1_core.html',1,'SiteWarmer']]],
+  ['sitewarmer',['SiteWarmer',['../index.html',1,'']]],
   ['logging',['Logging',['../namespace_site_warmer_1_1_core_1_1_logging.html',1,'SiteWarmer::Core']]],
   ['sitewarmer',['SiteWarmer',['../namespace_site_warmer.html',1,'']]],
   ['size',['Size',['../class_site_warmer_1_1_core_1_1_collection_1_1_abstract_collection.html#ae6ee32afa4b2ce36e0fb0ff86971639d',1,'SiteWarmer::Core::Collection::AbstractCollection']]],
