@@ -1,7 +1,7 @@
-$sharedAssemblyInfo = Get-Content .\SiteWarmer\SharedAssemblyInfo.cs
+$assembly = '.\SiteWarmer\SiteWarmer.App\bin\Release\output\SiteWarmer.exe'
+$assemblyName = (Get-Item $assembly).VersionInfo.FileVersion 
 
-Write-Host $sharedAssemblyInfo
+Write-Host "Assembly Version"
+Write-Host $assemblyName
 
-
-$RegularExpression = [regex] 'AssemblyVersion\(\"(.*)\"\)'
-
+Set-AppveyorBuildVariable -Name "AssemblyVersion" -Value $assemblyName
