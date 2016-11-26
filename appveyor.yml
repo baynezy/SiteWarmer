@@ -11,7 +11,7 @@ environment:
   GithubPersonalAccessToken:
     secure: 9EkZYUVbHPWlMZLyUqjY79llLHc6DghntcHAodFfiMyOsIc4pbCNNEMv/lTi0SvJ
 artifacts:
-- path: C:\projects\sitewarmer\SiteWarmer\SiteWarmer.App\bin\Release\output\SiteWarmer.exe
+- path: \SiteWarmer\SiteWarmer.App\bin\Release\output\SiteWarmer.exe
   name: release
 deploy:
 - provider: NuGet
