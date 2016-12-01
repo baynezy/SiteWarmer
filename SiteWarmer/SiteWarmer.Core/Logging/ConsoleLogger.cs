@@ -26,14 +26,12 @@ namespace SiteWarmer.Core.Logging
 		{
 			var passed = (check.Passed()) ? "Passed" : "Failed";
 
-
 			if (check.Passed())
 			{
 				WritePass(check, passed);
 			}
 			else if (!check.CheckContent())
 			{
-
 				WriteContentFail(check, passed);
 			}
 			else
