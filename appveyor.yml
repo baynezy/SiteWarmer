@@ -19,6 +19,12 @@ deploy:
     secure: mqfd5QXj3a2N+D2EP9avxupQJRBJFEKT9kjF7Tipl1OCkUvPBsKjfiZMQHpnwVKq
   on:
     branch: master
+- provider: GitHub
+  release: $(AssemblyVersion)
+  description: Release $(AssemblyVersion)
+  auth_token:
+    secure: 9EkZYUVbHPWlMZLyUqjY79llLHc6DghntcHAodFfiMyOsIc4pbCNNEMv/lTi0SvJ
+  artifact: /.*SiteWarmer\.exe
 install:
   - choco install doxygen.portable
 after_test:
