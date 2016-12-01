@@ -11,7 +11,7 @@ namespace SiteWarmer.Core.Logging
 		private static ConsoleColor _originalTextColour;
 		private static readonly object LockObject = new object();
 		private const ConsoleColor ErrorTextColour = ConsoleColor.Red;
-		private const ConsoleColor ContentFailTextColour = ConsoleColor.DarkYellow;
+		private const ConsoleColor ContentFailTextColour = ConsoleColor.Yellow;
 		private const ConsoleColor SuccessTextColour = ConsoleColor.Green;
 
 		/// <summary>
@@ -26,14 +26,12 @@ namespace SiteWarmer.Core.Logging
 		{
 			var passed = (check.Passed()) ? "Passed" : "Failed";
 
-
 			if (check.Passed())
 			{
 				WritePass(check, passed);
 			}
 			else if (!check.CheckContent())
 			{
-
 				WriteContentFail(check, passed);
 			}
 			else
