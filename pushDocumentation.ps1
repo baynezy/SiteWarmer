@@ -7,10 +7,10 @@ if($currentBranch -eq 'master') {
 	git config --global push.default matching
 
 	Write-Host "- Clone gh-pages branch...."
-	cd "$($buildFolder)\..\"
+	Set-Location "$($buildFolder)\..\"
 	mkdir gh-pages
 	git clone --quiet --branch=gh-pages https://$($username):$($personalAccessToken)@github.com/baynezy/SiteWarmer.git .\gh-pages\
-	cd gh-pages
+	Set-Location gh-pages
 	git status
 
 	Write-Host "- Clean gh-pages folder...."
@@ -34,6 +34,9 @@ if($currentBranch -eq 'master') {
 	else {
 		Write-Host "- No changes to documentation to commit"
 	}
+
+	# return to orignal folder so other scripts are unaffected
+	Set-Location $buildFolder
 }
 else {
 	Write-Host "- Not pushing documentation as '$currentBranch' does not match 'master'"
