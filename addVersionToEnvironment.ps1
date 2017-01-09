@@ -1,3 +1,7 @@
+param([string]$buildFolder)
+
+Write-Host $buildFolder
+
 Get-ChildItem
 
 $assembly = '.\SiteWarmer\SiteWarmer.App\bin\Release\output\SiteWarmer.exe'
