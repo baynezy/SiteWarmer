@@ -2,18 +2,16 @@
 
 Allows you to hit your sites after a deployment to make sure they are running.
 
-[![Stories in Ready](https://badge.waffle.io/baynezy/SiteWarmer.svg?label=ready&title=Stories%20in%20Ready)](http://waffle.io/baynezy/SiteWarmer)
-
 ## Build Status
 
 <table>
     <tr>
         <th>master</th>
-		<td><a href="https://ci.appveyor.com/project/baynezy/sitewarmer"><img src="https://ci.appveyor.com/api/projects/status/y46qd4btxsnklicp/branch/master?svg=true" alt="master" title="master" /></a></td>
+		<td><a href="https://github.com/baynezy/SiteWarmer/actions/workflows/branch-master.yml"><img src="https://github.com/baynezy/SiteWarmer/actions/workflows/branch-master.yml/badge.svg?branch=master" alt="master" title="master" /></a></td>
     </tr>
     <tr>
         <th>develop</th>
-		<td><a href="https://ci.appveyor.com/project/baynezy/sitewarmer"><img src="https://ci.appveyor.com/api/projects/status/y46qd4btxsnklicp/branch/develop?svg=true" alt="develop" title="develop" /></a></td>
+		<td><a href="https://github.com/baynezy/SiteWarmer/actions/workflows/branch-develop.yml"><img src="https://github.com/baynezy/SiteWarmer/actions/workflows/branch-develop.yml/badge.svg?branch=develop" alt="develop" title="develop" /></a></td>
     </tr>
 </table>
 
@@ -47,9 +45,9 @@ e.g.
 
     \> SiteWarmer.exe -i Config.txt
 	
-##Contributing
+## Contributing
 
-###Pull Requests
+### Pull Requests
 
 After forking the repository please create a pull request before creating the fix. This way we can talk about how the fix will be implemented. This will greatly increase your chance of your patch getting merged into the code base.
 
