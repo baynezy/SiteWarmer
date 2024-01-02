@@ -1,4 +1,0 @@
-﻿http://www.yahoo.com/
-http://www.google.com/
-http://www.github.com/
-http://www.bbc.co.uk/
