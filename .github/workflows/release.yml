@@ -1,0 +1,26 @@
+﻿name: "Release"
+
+on:
+  push:
+    tags:
+      - "**"
+
+jobs:
+  release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Determine tag"
+        run: "echo \"RELEASE_TAG=${GITHUB_REF#refs/tags/}\" >> $GITHUB_ENV"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: "Build Artifact"
+        run: |
+          dotnet publish ./src/Console/Console.csproj -c Release -r win-x64 -o ./output
+
+      - name: "Upload Artifact"
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.RELEASE_TAG }}
+          path: "./output/*.exe"
