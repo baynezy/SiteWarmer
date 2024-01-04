@@ -13,6 +13,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Create tag
+        env:
+          GH_TOKEN: ${{ secrets.CREATE_TAG_TOKEN }}
         run: |
           git config --global user.name "GitHub Action Bot"
           git config --global user.email "no-reply@after-life.co"
