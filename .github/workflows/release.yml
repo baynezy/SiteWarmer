@@ -6,21 +6,27 @@ on:
       - "**"
 
 jobs:
+  get-version:
+    uses: ./.github/workflows/step-version.yml
+    with:
+      static-build: true
+      
   release:
-    name: "Release"
+    needs: [get-version]
     runs-on: "ubuntu-latest"
     steps:
-      - name: "Determine tag"
-        run: "echo \"RELEASE_TAG=${GITHUB_REF#refs/tags/}\" >> $GITHUB_ENV"
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: "Build Artifact"
         run: |
-          dotnet publish ./src/Console/Console.csproj -c Release -r win-x64 -o ./output
+          dotnet publish ./src/Console/Console.csproj -c Release -r win-x64 -o ./output /p:Version=${{ needs.get-version.outputs.version }}
 
-      - name: "Upload Artifact"
-        uses: actions/upload-artifact@v2
+      - name: "Create Release"
+        uses: softprops/action-gh-release@v0.1.15
         with:
-          name: ${{ env.RELEASE_TAG }}
-          path: "./output/*.exe"
+          token: ${{ secrets.CREATE_RELEASE_TOKEN }}
+          target_commitish: ${{ github.sha }}
+          generate_release_notes: true
+          files: |
+            ./output/SiteWarmer.exe
