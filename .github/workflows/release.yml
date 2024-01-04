@@ -1,4 +1,4 @@
-﻿name: "Release"
+name: "Release"
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
           dotnet publish ./src/Console/Console.csproj -c Release -r win-x64 -o ./output
 
       - name: "Upload Artifact"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.RELEASE_TAG }}
           path: "./output/*.exe"
