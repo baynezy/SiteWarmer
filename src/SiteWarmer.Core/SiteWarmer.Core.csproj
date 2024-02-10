@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Authors>Simon Baynes</Authors>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/baynezy/Html2Markdown</PackageProjectUrl>
+        <Description>Allows you to hit your sites after a deployment to make sure they are running.</Description>
+        <Copyright>© Simon Baynes 2012</Copyright>
+        <PackageTags>deployments;checking</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+</Project>

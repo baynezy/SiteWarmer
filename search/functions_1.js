@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['check',['Check',['../interface_site_warmer_1_1_core_1_1_comms_1_1_i_requester.html#a8ff0c57ebc4ffa55ace15400986633d3',1,'SiteWarmer.Core.Comms.IRequester.Check()'],['../class_site_warmer_1_1_core_1_1_comms_1_1_requester.html#a99399ace5050e2877baf415f38081063',1,'SiteWarmer.Core.Comms.Requester.Check()']]],
-  ['checkcontent',['CheckContent',['../class_site_warmer_1_1_core_1_1_config_1_1_check.html#a440be5c69045b6b3f3eeda8e78cd5168',1,'SiteWarmer::Core::Config::Check']]],
-  ['close',['Close',['../class_site_warmer_1_1_core_1_1_logging_1_1_console_logger.html#aa64e379793cec5f11578eca5679cf3b7',1,'SiteWarmer.Core.Logging.ConsoleLogger.Close()'],['../class_site_warmer_1_1_core_1_1_logging_1_1_file_logger.html#ab4d6ff2b5bb499059e484e51794993c6',1,'SiteWarmer.Core.Logging.FileLogger.Close()'],['../interface_site_warmer_1_1_core_1_1_logging_1_1_i_logger.html#a0190e41ac2d5b9b1f5d1d54bb0a6fbb8',1,'SiteWarmer.Core.Logging.ILogger.Close()'],['../class_site_warmer_1_1_core_1_1_logging_1_1_logger_collection.html#aa7ce8b18820aef6af6210f1f8f8b6c9c',1,'SiteWarmer.Core.Logging.LoggerCollection.Close()']]],
-  ['consolelogger',['ConsoleLogger',['../class_site_warmer_1_1_core_1_1_logging_1_1_console_logger.html#ab6ae53131b97849d477fc5aa98aed346',1,'SiteWarmer::Core::Logging::ConsoleLogger']]],
-  ['createfile',['CreateFile',['../class_site_warmer_1_1_core_1_1_logging_1_1_file_helper.html#afc5b22ba3c2553582fa3065cfb16015a',1,'SiteWarmer.Core.Logging.FileHelper.CreateFile()'],['../interface_site_warmer_1_1_core_1_1_logging_1_1_i_file_helper.html#a900f56c27952c8525ebd82c751fc891c',1,'SiteWarmer.Core.Logging.IFileHelper.CreateFile()']]],
-  ['customwarmer',['CustomWarmer',['../class_site_warmer_1_1_core_1_1_custom_warmer.html#aa86d2ea433ec6e2c4d1d54a864508c26',1,'SiteWarmer::Core::CustomWarmer']]]
-];
