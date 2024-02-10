@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<checks>
-	<check>
-		<url>http://bayn.es/</url>
-		<content>
-			<positive>yahoo</positive>
-		</content>
-	</check>
-</checks>
