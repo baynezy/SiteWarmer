@@ -3,7 +3,7 @@ using SiteWarmer.Core.Config;
 
 namespace Console.Factories;
 
-public class ConfigFactory
+public static class ConfigFactory
 {
     public static IConfig Create(List<string> input)
     {
