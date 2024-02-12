@@ -7,7 +7,7 @@ namespace SiteWarmer.Core.Logging;
 /// </summary>
 public class ConsoleLogger : ILogger
 {
-    private static ConsoleColor _originalTextColour;
+    private static readonly ConsoleColor OriginalTextColour = Console.ForegroundColor;
     private static readonly object LockObject = new();
     private const ConsoleColor ErrorTextColour = ConsoleColor.Red;
     private const ConsoleColor ContentFailTextColour = ConsoleColor.Yellow;
@@ -18,7 +18,6 @@ public class ConsoleLogger : ILogger
     /// </summary>
     public ConsoleLogger()
     {
-        _originalTextColour = Console.ForegroundColor;
     }
 
     public void Log(Check check)
@@ -66,7 +65,7 @@ public class ConsoleLogger : ILogger
         {
             Console.ForegroundColor = textColour;
             WriteToConsole(check, passed);
-            Console.ForegroundColor = _originalTextColour;	
+            Console.ForegroundColor = OriginalTextColour;	
         }
     }
 
