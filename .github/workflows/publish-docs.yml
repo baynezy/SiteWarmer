@@ -1,0 +1,18 @@
+﻿name: Push Documentation
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: 
+    
+
+jobs:
+  push-documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        with:
+          github_token: ${{ secrets.PUBLISH_DOCS_TOKEN }}
+          branch: gh-pages
+          config_file: doxygen.config

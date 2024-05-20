@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.markdownlint.json = .markdownlint.json
 		CHANGELOG.md = CHANGELOG.md
 		semver.json = semver.json
+		.gitmessage = .gitmessage
+		.cm\gitstream.cm = .cm\gitstream.cm
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F59BEBC7-E902-4FF8-845A-490256D06ABB}"

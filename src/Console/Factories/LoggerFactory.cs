@@ -2,7 +2,7 @@
 
 namespace Console.Factories;
 
-public class LoggerFactory
+public static class LoggerFactory
 {
     public static ILogger Create(bool? logError)
     {

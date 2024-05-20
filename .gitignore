@@ -448,3 +448,6 @@ MigrationBackup/
 
 # exe build
 output/
+
+## Doxygen
+docs/

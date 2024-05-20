@@ -5,7 +5,7 @@ using SiteWarmer.Core.Logging;
 
 namespace Console.Factories;
 
-public class WarmerFactory
+public static class WarmerFactory
 {
     public static Warmer Create(int? retries, IConfig config, IRequester requester, ILogger logger)
     {
