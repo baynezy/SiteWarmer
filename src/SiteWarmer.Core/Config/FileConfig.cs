@@ -18,7 +18,7 @@ public class FileConfig : IConfig
     /// <summary>
     /// The collection of Checks contained within the config
     /// </summary>
-    public IList<Check> Checks { get; }
+    public List<Check> Checks { get; }
 
     private void Load(string configPath)
     {

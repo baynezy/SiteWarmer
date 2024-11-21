@@ -46,7 +46,7 @@ public class Warmer
     /// </summary>
     /// <param name="checks">Collection of Check to run</param>
     /// <returns>Whether all checks have completed</returns>
-    protected virtual async Task<bool> RunChecksAsync(IList<Check> checks)
+    protected virtual async Task<bool> RunChecksAsync(List<Check> checks)
     {
         await _warmer.WarmAsync(checks, _logger.Log);
 
