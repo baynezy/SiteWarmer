@@ -9,5 +9,5 @@ public interface IConfig
     /// <summary>
     /// The collection of Checks contained within the config
     /// </summary>
-    IList<Check> Checks { get; }
+    List<Check> Checks { get; }
 }

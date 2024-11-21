@@ -22,13 +22,13 @@ public static class ConfigFactory
         }
         else
         {
-            config = GetConfig(input.First());
+            config = GetConfig(input[0]);
         }
 
         return config;
     }
 
-    private static bool HasMultipleFiles(ICollection input)
+    private static bool HasMultipleFiles(List<string> input)
     {
         return input.Count > 1;
     }

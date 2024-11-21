@@ -52,5 +52,5 @@ public class XmlConfig : IConfig
     /// <summary>
     /// The collection of Checks contained within the config
     /// </summary>
-    public IList<Check> Checks { get; private set; }
+    public List<Check> Checks { get; private set; }
 }

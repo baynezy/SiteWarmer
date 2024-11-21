@@ -7,7 +7,7 @@ namespace Console.Commands.WarmUrls;
 
 internal class WarmUrlsCommand
 {
-    public async Task WarmAsync(
+    public static async Task WarmAsync(
         [Option('i', Description = "This is a comma separated list of input files containing the urls to warm")] List<string> input,
         [Option('l', Description = "If you wish to create a log file of all the non-passing checks")] bool? logError,
         [Option('r', Description = "The number of times to retry non-successful http calls")] int? retries

@@ -31,7 +31,7 @@ public class ManualConfig : IConfig
     /// Initialise a config with a collection of URLs
     /// </summary>
     /// <param name="urls">URLs to initialise the configuration with</param>
-    public ManualConfig(IList<Check> urls)
+    public ManualConfig(List<Check> urls)
     {
         Checks = urls;
     }
@@ -39,7 +39,7 @@ public class ManualConfig : IConfig
     /// <summary>
     /// The collection of Checks contained within the config
     /// </summary>
-    public IList<Check> Checks { get; private set; }
+    public List<Check> Checks { get; }
 
     /// <summary>
     /// Add a new check to the end of the configuration

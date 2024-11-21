@@ -7,4 +7,4 @@ var app = builder.Build();
 
 app.AddCommands<WarmUrlsCommand>();
 
-app.Run();
+await app.RunAsync();

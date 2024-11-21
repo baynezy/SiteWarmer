@@ -10,7 +10,7 @@ public class ConfigCollection : AbstractCollection<IConfig>, IConfig
     /// <summary>
     /// The collection of Checks contained within the config
     /// </summary>
-    public IList<Check> Checks => CombineChecks();
+    public List<Check> Checks => CombineChecks();
 
     private List<Check> CombineChecks()
     {
