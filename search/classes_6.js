@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['repeatwarmer_81',['RepeatWarmer',['../class_repeat_warmer.html',1,'']]],
-  ['requester_82',['Requester',['../class_requester.html',1,'']]]
+  ['repeatwarmer_0',['RepeatWarmer',['../class_site_warmer_1_1_core_1_1_repeat_warmer.html',1,'SiteWarmer::Core']]],
+  ['requester_1',['Requester',['../class_site_warmer_1_1_core_1_1_comms_1_1_requester.html',1,'SiteWarmer::Core::Comms']]]
 ];

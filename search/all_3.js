@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['fileconfig_22',['FileConfig',['../class_file_config.html',1,'FileConfig'],['../class_file_config.html#ab40ff6eef7bc8e6d71ffc21013c9b848',1,'FileConfig.FileConfig()']]],
-  ['fileconfig_2ecs_23',['FileConfig.cs',['../_file_config_8cs.html',1,'']]],
-  ['fileexists_24',['FileExists',['../class_file_helper.html#a29d4c0c24d504e1e9ca6e5d12b9d8afc',1,'FileHelper.FileExists()'],['../interface_i_file_helper.html#a273963f612292bd49f1f67fe6b80de4d',1,'IFileHelper.FileExists()']]],
-  ['filehelper_25',['FileHelper',['../class_file_helper.html',1,'']]],
-  ['filehelper_2ecs_26',['FileHelper.cs',['../_file_helper_8cs.html',1,'']]],
-  ['filelogger_27',['FileLogger',['../class_file_logger.html',1,'FileLogger'],['../class_file_logger.html#ae1b1efe16e2be997c17de4603cc49b87',1,'FileLogger.FileLogger()']]],
-  ['filelogger_2ecs_28',['FileLogger.cs',['../_file_logger_8cs.html',1,'']]]
+  ['file_0',['Config file',['../index.html#autotoc_md4',1,'']]],
+  ['fileconfig_1',['fileconfig',['../class_site_warmer_1_1_core_1_1_config_1_1_file_config.html',1,'SiteWarmer.Core.Config.FileConfig'],['../class_site_warmer_1_1_core_1_1_config_1_1_file_config.html#a79eb91a934638c58465e45cfbb7ac768',1,'SiteWarmer.Core.Config.FileConfig.FileConfig()']]],
+  ['fileconfig_2ecs_2',['FileConfig.cs',['../_file_config_8cs.html',1,'']]],
+  ['fileexists_3',['fileexists',['../class_site_warmer_1_1_core_1_1_logging_1_1_file_helper.html#a4dc1b457153871fe7aede6e2d066ee8f',1,'SiteWarmer.Core.Logging.FileHelper.FileExists()'],['../interface_site_warmer_1_1_core_1_1_logging_1_1_i_file_helper.html#a8bf65f1fc76988d12f46f47e227b4f15',1,'SiteWarmer.Core.Logging.IFileHelper.FileExists()']]],
+  ['filehelper_4',['FileHelper',['../class_site_warmer_1_1_core_1_1_logging_1_1_file_helper.html',1,'SiteWarmer::Core::Logging']]],
+  ['filehelper_2ecs_5',['FileHelper.cs',['../_file_helper_8cs.html',1,'']]],
+  ['filelogger_6',['filelogger',['../class_site_warmer_1_1_core_1_1_logging_1_1_file_logger.html',1,'SiteWarmer.Core.Logging.FileLogger'],['../class_site_warmer_1_1_core_1_1_logging_1_1_file_logger.html#acddbce742574000a94e4316658e8f738',1,'SiteWarmer.Core.Logging.FileLogger.FileLogger()']]],
+  ['filelogger_2ecs_7',['FileLogger.cs',['../_file_logger_8cs.html',1,'']]]
 ];

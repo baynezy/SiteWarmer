@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['source_134',['Source',['../class_check.html#a335f8489e31d8c53505471ed717400fb',1,'Check']]],
-  ['status_135',['Status',['../class_check.html#a69263ad0107ba74975f36157c75cced8',1,'Check']]]
+  ['source_0',['Source',['../class_site_warmer_1_1_core_1_1_config_1_1_check.html#afe10542edeeebbaac8a0fdeb9f612d24',1,'SiteWarmer::Core::Config::Check']]],
+  ['status_1',['Status',['../class_site_warmer_1_1_core_1_1_config_1_1_check.html#a6d61227487fe6eccd36564e11f5c3117',1,'SiteWarmer::Core::Config::Check']]]
 ];

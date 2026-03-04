@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['abstractcollection_0',['AbstractCollection',['../class_abstract_collection.html',1,'AbstractCollection&lt; T &gt;'],['../class_abstract_collection.html#add067aacc3aa07924ce0564fca96ab40',1,'AbstractCollection.AbstractCollection()']]],
-  ['abstractcollection_2ecs_1',['AbstractCollection.cs',['../_abstract_collection_8cs.html',1,'']]],
-  ['abstractcollection_3c_20iconfig_20_3e_2',['AbstractCollection&lt; IConfig &gt;',['../class_abstract_collection.html',1,'']]],
-  ['abstractcollection_3c_20ilogger_20_3e_3',['AbstractCollection&lt; ILogger &gt;',['../class_abstract_collection.html',1,'']]],
-  ['add_4',['Add',['../class_abstract_collection.html#a4177b02348aafcce59f16205a3897f72',1,'AbstractCollection.Add()'],['../class_manual_config.html#a4d166e7bf760df0165c50637f7f2eb50',1,'ManualConfig.Add()']]]
+  ['a_20console_20application_0',['As a Console Application',['../index.html#autotoc_md5',1,'']]],
+  ['abstractcollection_1',['abstractcollection',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html',1,'SiteWarmer.Core.Collections.AbstractCollection&lt; T &gt;'],['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html#af7a55057a300cf908e3a7d6c42f924ea',1,'SiteWarmer.Core.Collections.AbstractCollection.AbstractCollection()']]],
+  ['abstractcollection_2ecs_2',['AbstractCollection.cs',['../_abstract_collection_8cs.html',1,'']]],
+  ['abstractcollection_3c_20iconfig_20_3e_3',['AbstractCollection&lt; IConfig &gt;',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html',1,'SiteWarmer::Core::Collections']]],
+  ['abstractcollection_3c_20ilogger_20_3e_4',['AbstractCollection&lt; ILogger &gt;',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html',1,'SiteWarmer::Core::Collections']]],
+  ['add_5',['add',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html#a38b4f184505a45a51636f6bdf921f113',1,'SiteWarmer.Core.Collections.AbstractCollection.Add()'],['../class_site_warmer_1_1_core_1_1_config_1_1_manual_config.html#af1ee5d16bf44b627623c3c5be728f87e',1,'SiteWarmer.Core.Config.ManualConfig.Add()']]],
+  ['application_6',['As a Console Application',['../index.html#autotoc_md5',1,'']]],
+  ['as_20a_20console_20application_7',['As a Console Application',['../index.html#autotoc_md5',1,'']]]
 ];

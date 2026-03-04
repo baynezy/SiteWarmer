@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['items_127',['Items',['../class_abstract_collection.html#ada61698598e5db28390b31d80c5b00bb',1,'AbstractCollection']]]
+  ['items_0',['Items',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html#a045a615f6255db6911fed25a2a56852a',1,'SiteWarmer::Core::Collections::AbstractCollection']]]
 ];

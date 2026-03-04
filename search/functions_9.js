@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xmlconfig_126',['XmlConfig',['../class_xml_config.html#ae0231e3c2d73929f2d6e20221ec5890c',1,'XmlConfig']]]
+  ['xmlconfig_0',['XmlConfig',['../class_site_warmer_1_1_core_1_1_config_1_1_xml_config.html#aeec0a22d13ed326c4c4b29608c3d1bc3',1,'SiteWarmer::Core::Config::XmlConfig']]]
 ];

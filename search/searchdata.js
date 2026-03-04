@@ -1,33 +1,36 @@
 var indexSectionsWithContent =
 {
-  0: "acdfilmnoprsuwx",
+  0: "acdfilmnoprsuvwx",
   1: "acfilmrwx",
-  2: "acdfilmrwx",
-  3: "acflmprswx",
-  4: "ino",
-  5: "cmrsu",
-  6: "s"
+  2: "s",
+  3: "acdfilmrwx",
+  4: "acflmprswx",
+  5: "ino",
+  6: "cmrsu",
+  7: "s"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files",
-  3: "functions",
-  4: "variables",
-  5: "properties",
-  6: "pages"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables",
+  6: "properties",
+  7: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Properties",
-  6: "Pages"
+  2: "Namespaces",
+  3: "Files",
+  4: "Functions",
+  5: "Variables",
+  6: "Properties",
+  7: "Pages"
 };
 

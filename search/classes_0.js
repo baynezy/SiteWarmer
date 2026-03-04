@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['abstractcollection_64',['AbstractCollection',['../class_abstract_collection.html',1,'']]],
-  ['abstractcollection_3c_20iconfig_20_3e_65',['AbstractCollection&lt; IConfig &gt;',['../class_abstract_collection.html',1,'']]],
-  ['abstractcollection_3c_20ilogger_20_3e_66',['AbstractCollection&lt; ILogger &gt;',['../class_abstract_collection.html',1,'']]]
+  ['abstractcollection_0',['AbstractCollection',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html',1,'SiteWarmer::Core::Collections']]],
+  ['abstractcollection_3c_20iconfig_20_3e_1',['AbstractCollection&lt; IConfig &gt;',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html',1,'SiteWarmer::Core::Collections']]],
+  ['abstractcollection_3c_20ilogger_20_3e_2',['AbstractCollection&lt; ILogger &gt;',['../class_site_warmer_1_1_core_1_1_collections_1_1_abstract_collection.html',1,'SiteWarmer::Core::Collections']]]
 ];

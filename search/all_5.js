@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['log_38',['Log',['../class_console_logger.html#a12edef89a3450c571bfc8d6398f0c318',1,'ConsoleLogger.Log()'],['../class_file_logger.html#a59a498f09b9dfaa3aa8b59bb11a60acf',1,'FileLogger.Log()'],['../interface_i_logger.html#a858c8a4a4d974060fcbd36675fd4abce',1,'ILogger.Log()'],['../class_logger_collection.html#a53aee91455e3c3ad5792271850dedab4',1,'LoggerCollection.Log()']]],
-  ['loggercollection_39',['LoggerCollection',['../class_logger_collection.html',1,'']]],
-  ['loggercollection_2ecs_40',['LoggerCollection.cs',['../_logger_collection_8cs.html',1,'']]]
+  ['license_0',['License',['../index.html#autotoc_md8',1,'']]],
+  ['log_1',['log',['../class_site_warmer_1_1_core_1_1_logging_1_1_console_logger.html#afd3af99f6ff40e189319edfd7b631682',1,'SiteWarmer.Core.Logging.ConsoleLogger.Log()'],['../class_site_warmer_1_1_core_1_1_logging_1_1_file_logger.html#a5f31dbcdd11d1bc7bc34f7bf376525e0',1,'SiteWarmer.Core.Logging.FileLogger.Log()'],['../interface_site_warmer_1_1_core_1_1_logging_1_1_i_logger.html#a8e5f4a846f22b91e892a045930d08c7d',1,'SiteWarmer.Core.Logging.ILogger.Log()'],['../class_site_warmer_1_1_core_1_1_logging_1_1_logger_collection.html#a534da310d4d580b7a0aa03a85347c2bb',1,'SiteWarmer.Core.Logging.LoggerCollection.Log()']]],
+  ['loggercollection_2',['LoggerCollection',['../class_site_warmer_1_1_core_1_1_logging_1_1_logger_collection.html',1,'SiteWarmer::Core::Logging']]],
+  ['loggercollection_2ecs_3',['LoggerCollection.cs',['../_logger_collection_8cs.html',1,'']]]
 ];
