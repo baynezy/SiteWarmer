@@ -19,7 +19,7 @@ jobs:
     name: "Draft a new release"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Create release branch
         run: git checkout -b release/${{ github.event.inputs.major_version }}.${{ github.event.inputs.minor_version }}.${{ github.event.inputs.patch_version }}.${{ github.run_number }}
         
@@ -36,7 +36,7 @@ jobs:
             }
 
       - name: Update changelog
-        uses: thomaseizinger/keep-a-changelog-new-release@3.0.0
+        uses: thomaseizinger/keep-a-changelog-new-release@3.1.0
         with:
           tag: ${{ github.event.inputs.major_version }}.${{ github.event.inputs.minor_version }}.${{ github.event.inputs.patch_version }}.${{ github.run_number }}
 
@@ -44,7 +44,7 @@ jobs:
         id: make-commit
         run: |
           git config --global user.name "GitHub Action Bot"
-          git config --global user.email "no-reply@after-life.co"
+          git config --global user.email "baynezy@gmail.com"
           git add CHANGELOG.md semver.json
           git commit --message "Prepare release ${{ github.event.inputs.major_version }}.${{ github.event.inputs.minor_version }}.${{ github.event.inputs.patch_version }}.${{ github.run_number }}"
 

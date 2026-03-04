@@ -8,7 +8,7 @@ namespace SiteWarmer.Core.Logging;
 /// </summary>
 public class LoggerCollection : AbstractCollection<ILogger>, ILogger
 {
-		
+    /// <inheritdoc/>
     public void Log(Check check)
     {
         foreach (var logger in Items)
@@ -17,6 +17,7 @@ public class LoggerCollection : AbstractCollection<ILogger>, ILogger
         }
     }
 
+    /// <inheritdoc/>
     public void Close()
     {
         foreach (var logger in Items)

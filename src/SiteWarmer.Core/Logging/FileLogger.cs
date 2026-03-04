@@ -21,6 +21,7 @@ public class FileLogger : ILogger
         _helper = helper;
     }
 
+    /// <inheritdoc/>
     public void Log(Check check)
     {
         if (check.Passed())
@@ -45,11 +46,12 @@ public class FileLogger : ILogger
         _tracker.Add(check, true);
     }
 
+    /// <inheritdoc/>
     public void Close()
     {
         var failedChecks = FindFailedChecks();
         if (failedChecks.Count == 0) return;
-            
+
         InitializeLog();
         foreach (var check in failedChecks)
         {
@@ -59,7 +61,8 @@ public class FileLogger : ILogger
 
     private List<Check> FindFailedChecks()
     {
-        return _checks.Where(check => _tracker.ContainsKey(check)).ToList();
+        return _checks.Where(check => _tracker.ContainsKey(check))
+            .ToList();
     }
 
     private void InitializeLog()

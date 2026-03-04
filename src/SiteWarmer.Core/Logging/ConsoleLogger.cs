@@ -20,6 +20,10 @@ public class ConsoleLogger : ILogger
     {
     }
 
+    /// <summary>
+    /// Log the result of a Check to the console. If the Check passed, it will log in green. If the Check failed due to content matches, it will log in yellow. If the Check failed due to a status code, it will log in red.
+    /// </summary>
+    /// <param name="check">The Check to log the result of</param>
     public void Log(Check check)
     {
         var passed = (check.Passed()) ? "Passed" : "Failed";
@@ -38,6 +42,7 @@ public class ConsoleLogger : ILogger
         }
     }
 
+    /// <inheritdoc/>
     public void Close()
     {
         // no need to do anything here
@@ -65,7 +70,7 @@ public class ConsoleLogger : ILogger
         {
             Console.ForegroundColor = textColour;
             WriteToConsole(check, passed);
-            Console.ForegroundColor = OriginalTextColour;	
+            Console.ForegroundColor = OriginalTextColour;
         }
     }
 

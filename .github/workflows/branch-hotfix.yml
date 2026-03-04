@@ -30,7 +30,7 @@ jobs:
     needs: [get-version]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
       - name: Increment Version
@@ -49,13 +49,13 @@ jobs:
               "build": "${{ github.run_number }}"
             }
       - name: Update changelog
-        uses: thomaseizinger/keep-a-changelog-new-release@3.0.0
+        uses: thomaseizinger/keep-a-changelog-new-release@3.1.0
         with:
           tag: ${{ needs.get-version.outputs.major }}.${{ needs.get-version.outputs.minor }}.${{ steps.increment_version.outputs.patch_version }}.${{ github.run_number }}
       - name: Commit Changes
         run: |
           git config --global user.name "GitHub Action Bot"
-          git config --global user.email "no-reply@after-life.co"
+          git config --global user.email "baynezy@gmail.com"
           git add CHANGELOG.md semver.json
           git commit --message "Bump Version to ${{ needs.get-version.outputs.major }}.${{ needs.get-version.outputs.minor }}.${{ steps.increment_version.outputs.patch_version }}.${{ github.run_number }}"
 

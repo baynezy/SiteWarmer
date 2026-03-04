@@ -25,7 +25,8 @@ public class RepeatWarmer : Warmer
         _numberOfRuns = 0;
     }
 
-    protected override async Task<bool> RunChecksAsync(IList<Check> checks)
+    /// <inheritdoc/>
+    protected override async Task<bool> RunChecksAsync(List<Check> checks)
     {
         await base.RunChecksAsync(checks);
 
@@ -44,12 +45,12 @@ public class RepeatWarmer : Warmer
         return _numberOfRuns >= _timesToRepeat;
     }
 
-    private static bool StillHasErrors(IEnumerable<Check> checks)
+    private static bool StillHasErrors(List<Check> checks)
     {
-        return OnlyErrors(checks).Count() != 0;
+        return OnlyErrors(checks).Count > 0;
     }
 
-    private static IList<Check> OnlyErrors(IEnumerable<Check> checks)
+    private static List<Check> OnlyErrors(List<Check> checks)
     {
         return checks.Where(c => !c.Passed()).ToList();
     }

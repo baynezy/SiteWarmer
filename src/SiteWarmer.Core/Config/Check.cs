@@ -6,7 +6,14 @@
 /// </summary>
 public class Check
 {
+    /// <summary>
+    /// The status code returned when the Url is hit that indicates the Url is responding correctly
+    /// </summary>
     public const int Ok = 200;
+
+    /// <summary>
+    /// The status code returned when the Url is hit that indicates the Url is not responding correctly
+    /// </summary>
     public const int NotFound = 404;
 
     /// <summary>
@@ -38,10 +45,14 @@ public class Check
         return Status == Ok && CheckContent();
     }
 
+    /// <summary>
+    /// Check the content of the Url against the content matches. If any of the content matches fail, then this will return false. If all of the content matches pass, then this will return true.
+    /// </summary>
+    /// <returns>Whether the content of the Url passed the content matches</returns>
     public bool CheckContent()
     {
         var passed = true;
-			
+
         foreach (var match in ContentMatches)
         {
             passed = CheckMatch(match);
