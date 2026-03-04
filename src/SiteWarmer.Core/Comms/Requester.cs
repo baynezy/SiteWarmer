@@ -9,12 +9,18 @@ public class Requester : IRequester
 {
     private readonly HttpClient _httpClient;
 
-    public Requester()
+    public Requester() : this(new HttpClient())
     {
-        _httpClient = new HttpClient();
+        
+    }
+
+    public Requester(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
         _httpClient.Timeout = TimeSpan.FromSeconds(10);
         _httpClient.DefaultRequestHeaders.ConnectionClose = true;
     }
+
     public async Task CheckAsync(Check check)
     {
         await RunCheckAsync(check);
@@ -24,7 +30,7 @@ public class Requester : IRequester
     {
         var request = await _httpClient.GetAsync(check.Url);
         var response = await request.Content.ReadAsStringAsync();
-        check.Status = (int)request.StatusCode;
+        check.Status = (int) request.StatusCode;
         check.Source = response;
     }
 }
