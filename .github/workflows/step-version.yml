@@ -39,7 +39,7 @@ jobs:
       build: ${{ steps.set-version.outputs.build }}
     steps:
       - name: Get Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Get Version
         id: get-version
         uses: RadovanPelka/github-action-json@v1.0.2
