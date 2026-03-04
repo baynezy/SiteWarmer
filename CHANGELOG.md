@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Sonar Cloud analysis
+- Broken HTTP based unit tests (#128)
 
 ## [5.0.5.5] - 2024-05-20
 
