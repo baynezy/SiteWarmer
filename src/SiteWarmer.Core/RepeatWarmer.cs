@@ -25,6 +25,7 @@ public class RepeatWarmer : Warmer
         _numberOfRuns = 0;
     }
 
+    /// <inheritdoc/>
     protected override async Task<bool> RunChecksAsync(List<Check> checks)
     {
         await base.RunChecksAsync(checks);

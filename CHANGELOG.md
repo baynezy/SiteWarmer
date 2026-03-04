@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Missing XML Docs (#130)
+
 ### Fixed
 
 - Sonar Cloud analysis

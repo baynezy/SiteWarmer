@@ -6,8 +6,14 @@
 /// <typeparam name="T">The Type of objects in the collection</typeparam>
 public abstract class AbstractCollection<T>
 {
+    /// <summary>
+    /// The list of items in the collection. This is protected so that it can be accessed by child classes, but not by external code.
+    /// </summary>
     protected readonly IList<T> Items;
 
+    /// <summary>
+    /// Create a new instance of the AbstractCollection class
+    /// </summary>
     protected AbstractCollection()
     {
         Items = new List<T>();
