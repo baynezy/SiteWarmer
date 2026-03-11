@@ -1,4 +1,4 @@
-﻿name: Push Documentation
+name: Push Documentation
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
   push-documentation:
     runs-on: ubuntu-latest
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
           github_token: ${{ secrets.PUBLISH_DOCS_TOKEN }}
           branch: gh-pages
