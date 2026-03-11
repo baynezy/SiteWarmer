@@ -23,7 +23,7 @@ jobs:
           dotnet publish ./src/Console/Console.csproj -c Release -r win-x64 -o ./output /p:Version=${{ needs.get-version.outputs.version }}
 
       - name: "Create Release"
-        uses: softprops/action-gh-release@v0.1.15
+        uses: softprops/action-gh-release@v2.5.0
         with:
           token: ${{ secrets.CREATE_RELEASE_TOKEN }}
           target_commitish: ${{ github.sha }}
